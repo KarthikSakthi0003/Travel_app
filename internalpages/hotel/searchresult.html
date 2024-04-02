@@ -1,0 +1,1576 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVELEAN</title>
+
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="../../assets/css/jquery-ui.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/flightform.css">
+    <link rel="stylesheet" href="../../assets/css/internal.css">
+    <link rel="stylesheet" href="../../assets/css/hotelinc.css" />
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+
+<body>
+    <!-- ========== Start header Section ========== -->
+    <header class="bg_hdr">
+        <div class="container-md">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <!-- <img src="../../assets/imges/logo/logo.jpeg" alt="TRAVELEAN-logo" class="hdr_logo" /> -->
+                        <span class="text-white fw-bold"> TRAVELEAN</span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse mt-3 mt-md-0" id="navbarSupportedContent">
+
+                        <div class="intrnal_hdr mb-2 mb-lg-0">
+                            <a class="nav-link " href="#"><i class="fa-solid fa-plane"></i><span>
+                                    Flight</span></a>
+                            <a class="nav-link active" href="#"><i class="fa-solid fa-hotel"></i> <span>Hotel</span></a>
+                            <a class="nav-link" href="#"><i class="fa-solid fa-car main_nav_ic"></i><span>
+                                    Transfer</span></a>
+                        </div>
+
+                        <ul
+                            class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-3 flex-row flex-wrap gap-sm-0">
+                            <li class="nav-item hdr_social_link_fx">
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item country_select_filter" type="button" data-bs-toggle="modal"
+                                data-bs-target="#pricefilterModal">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                                AUD
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </li>
+                            <li class="nav-item country_select_filter" type="button" data-bs-toggle="modal"
+                                data-bs-target="#countryfilterModal">
+                                <span class="flag_icon">
+                                    <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                </span>
+                                AUS <i class="fa-solid fa-chevron-down"></i>
+                            </li>
+
+                            <li class="nav-item" type="button">
+                                <span class="Login_btn dd_btn" data-bs-toggle="modal"
+                                    data-bs-target="#logindropdownModal">
+                                    Login / Signup <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- ========== End header Section ========== -->
+
+
+    <main>
+
+
+        <!-- {/*{/* breadcrumb start */} -->
+        <section class="container d-md-none pt-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">Hotel result</a>
+                    </li>
+                </ol>
+            </nav>
+        </section>
+        <!-- {/*{/* breadcrumb  end */} -->
+
+        <!-- ========== Start modify search Section ========== -->
+
+        <section class="mt-4">
+            <div class="container border_sec  card_style2 shadow-lg">
+                <div class="row">
+                    <div class="col-sm-12  col-lg-7">
+                        <div class="row res_Modify_gap ">
+                            <div class="col-12 col-md-6">
+                                <div class="flight_det_fx border_rt b_rt_0">
+                                    <span class="from_fx">
+                                        <span class="frmCode"> Destination</span>
+                                        <span><i class="fa-solid fa-hotel md_card_icon"></i> Sydney</span>
+                                    </span>
+
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 br_tp_1 mt-2 mt-md-0">
+                                <div class="from_fx border_rt">
+                                    <span class="dep_font">Check-In</span>
+                                    <span class="r_fsz13">
+                                        <span class="font_bold"> 07</span> Oct'24, Friday
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 br_tp_1 mt-2 mt-md-0">
+                                <div class="from_fx border_rt b_rt_0 text-end text-lg-start">
+                                    <span class="dep_font">Check-Out</span>
+                                    <span class="r_fsz13">
+                                        <span class="font_bold"> 31</span> Oct'24, Saturday
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-12  col-lg-5 res_md_btn br_tp_1 pt-2 pt-lg-0">
+                        <div class="row md_align">
+                            <div class="col-7 ">
+                                <div class="from_fx border_rt b_rt_0">
+                                    <span class="dep_font">Rooms & Guests </span>
+                                    <p class="">
+                                        <span><b class="font_bold"> 1</b> Room</span>
+                                        <span><b class="font_bold">1</b> Guest</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-5 col-lg-4">
+                                <div class="modify collapsed" data-bs-toggle="collapse" data-bs-target="#modify_show"
+                                    aria-expanded="false" aria-controls="modify_show">
+                                    Modify
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ========== Start modify saerch form Section ========== -->
+            <div class="collapse" id="modify_show">
+                <div class="container pt-2 pb-0">
+                    <div class="search_form_section">
+                        <!-- ========== Start hotel form Section ========== -->
+                        <div class="tab-pane fade show active" id="nav-hotel" role="tabpanel"
+                            aria-labelledby="nav-hotel-tab">
+                            <div class="card shadow-lg p-3 p-md-4 pt-md-5  card_brad search_form_bgclr">
+                                <div class="traveller_nav_fx mb-2">
+                                    <p class="h5">Book Domestic and International Hotels</p>
+                                    <div class="">
+                                        <div class="dropdown">
+                                            <div class="input-wrap occupancy-change" id="travellerdetailshotel"
+                                                data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                                aria-expanded="false">
+                                                <p class="input-static">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                        viewBox="0 0 22 22" fill="none">
+                                                        <path
+                                                            d="M18.4444 16.4055C18.0391 15.4455 17.451 14.5735 16.7128 13.8381C15.9768 13.1005 15.1049 12.5125 14.1454 12.1064C14.1368 12.1021 14.1282 12.1 14.1196 12.0957C15.4581 11.1289 16.3282 9.5541 16.3282 7.77734C16.3282 4.83398 13.9434 2.44922 11.0001 2.44922C8.0567 2.44922 5.67193 4.83398 5.67193 7.77734C5.67193 9.5541 6.54205 11.1289 7.88052 12.0979C7.87193 12.1021 7.86334 12.1043 7.85474 12.1086C6.89224 12.5146 6.02857 13.0969 5.28736 13.8402C4.54982 14.5762 3.96178 15.4481 3.55572 16.4076C3.1568 17.347 2.94166 18.3542 2.92193 19.3746C2.92136 19.3975 2.92538 19.4204 2.93376 19.4417C2.94214 19.4631 2.95471 19.4825 2.97072 19.4989C2.98674 19.5153 3.00588 19.5284 3.02702 19.5373C3.04816 19.5462 3.07087 19.5508 3.0938 19.5508H4.38287C4.4774 19.5508 4.55259 19.4756 4.55474 19.3832C4.59771 17.7246 5.26373 16.1713 6.44107 14.9939C7.65923 13.7758 9.27701 13.1055 11.0001 13.1055C12.7231 13.1055 14.3409 13.7758 15.559 14.9939C16.7364 16.1713 17.4024 17.7246 17.4454 19.3832C17.4475 19.4777 17.5227 19.5508 17.6172 19.5508H18.9063C18.9292 19.5508 18.952 19.5462 18.9731 19.5373C18.9942 19.5284 19.0134 19.5153 19.0294 19.4989C19.0454 19.4825 19.058 19.4631 19.0664 19.4417C19.0747 19.4204 19.0788 19.3975 19.0782 19.3746C19.0567 18.3477 18.844 17.3486 18.4444 16.4055ZM11.0001 11.4727C10.0139 11.4727 9.0858 11.0881 8.38755 10.3898C7.68931 9.6916 7.30474 8.76348 7.30474 7.77734C7.30474 6.79121 7.68931 5.86309 8.38755 5.16484C9.0858 4.4666 10.0139 4.08203 11.0001 4.08203C11.9862 4.08203 12.9143 4.4666 13.6126 5.16484C14.3108 5.86309 14.6954 6.79121 14.6954 7.77734C14.6954 8.76348 14.3108 9.6916 13.6126 10.3898C12.9143 11.0881 11.9862 11.4727 11.0001 11.4727Z"
+                                                            fill="#333333" />
+                                                    </svg>&nbsp;&nbsp;<span id="occ-room-count" tabindex="4">1</span>
+                                                    Room,
+                                                    <span id="occ-adult-count">2</span> Adults,
+                                                    <span id="occ-child-count">0</span> Children
+                                                </p>
+                                                <i class="fa-solid fa-chevron-down"></i>
+                                            </div>
+                                            <div class="occupancy-dropdown dropdown-menu p-3"
+                                                aria-labelledby="travellerdetailshotel">
+                                                <article class="row room-count align-items-center">
+                                                    <label class="col-sm-6 col-xs-6 fsz_14">Rooms</label>
+                                                    <div class="col-sm-6 col-xs-6 p-0">
+                                                        <div class="row input-group pull-right flex-nowrap">
+                                                            <span class="col-4 p-0 input-group-btn"
+                                                                style="text-align: center;">
+                                                                <button
+                                                                    class="btn btn-default number-spinner shadow-none"
+                                                                    data-field="room_count" data-type="minus">
+                                                                    <i class="fa fa-minus"></i>
+                                                                </button>
+                                                            </span>
+                                                            <input type="text" class="col-4 spinner-value"
+                                                                name="room_count" id="room_count" value="1" max="4"
+                                                                min="1" readonly="readonly" />
+                                                            <span class="col-4 p-0 input-group-btn"
+                                                                style="text-align: center;">
+                                                                <button
+                                                                    class="btn btn-default number-spinner shadow-none"
+                                                                    data-field="room_count" data-type="plus">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                        <!--  input-group number-spinner //  -->
+                                                    </div>
+                                                    <!-- col// -->
+                                                </article>
+                                                <div id="rooms-repeat-block">
+                                                    <div id="room-1">
+                                                        <h5 class="title">
+                                                            <i class="fa fa-hotel"></i>&nbsp;&nbsp;Room 1
+                                                        </h5>
+                                                        <div class="item-occupancy cfx" id="child-age-block-1">
+                                                            <div class="item-people" style="width: 40%;">
+                                                                <label>
+                                                                    <i class="fa fa-male"></i>
+                                                                    Adults</label>
+                                                                <select id="adults-1" class="form-select shadow-none"
+                                                                    onchange="countOccupancies()" name="adults1">
+                                                                    <option value="1">1</option>
+                                                                    <option selected value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="item-people" style="width: 40%;">
+                                                                <label><i class="fa fa-child"></i>
+                                                                    Children</label>
+                                                                <select id="children-1" class="form-select shadow-none"
+                                                                    name="childs1"
+                                                                    onchange="renderAgeDropdown(this, 1)">
+                                                                    <option selected value="0">0</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <!-- children-age-wrap // -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--  occupancy-dropdown end //  -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form_border relative">
+                                    <div class="col-lg-4">
+                                        <div class="row p-2 relative">
+                                            <div class="col-12 ">
+                                                <div class="sc_form_fx d-flex flex-column">
+                                                    <p class="sc_form_lbl">City, Property Name Or Location</p>
+                                                    <span class="Location_icon_fx">
+                                                        <input type="text" name="" id="" placeholder="Sydney"
+                                                            class="sc_form_input" />
+                                                        <i class="fa-solid fa-location-crosshairs"></i>
+                                                    </span>
+                                                    <p class="sc_terminal">Australia</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 br_tp_1">
+                                        <div class="row p-2">
+                                            <div class="col-6 col-lg-4 form_inn_borderlt
+                                             form_inn_borderrt form_inn_borderlt_un brdr_lt_0">
+                                                <div class="sc_form_fx d-flex flex-column relative">
+                                                    <p class="sc_form_lbl">
+                                                        <i class="fa-solid fa-calendar-days"></i>
+                                                        Check-In
+                                                        <i class=" fa-solid fa-chevron-down"></i>
+                                                    </p>
+                                                    <input type="text" class="datepicker" id="">
+                                                    <p class="date_fx datetime"><span class="dayfn">22</span>
+                                                        <span class="monfn">Jul</span>' <span class="yrfn">23</span>
+                                                    </p>
+                                                    <p class="sc_terminal dayname">Saturday</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-lg-4 form_inn_borderrt mbtrbr brdr_rt_0">
+                                                <div class="sc_form_fx d-flex flex-column relative">
+                                                    <p class="sc_form_lbl">
+                                                        <i class="fa-solid fa-calendar-days"></i>
+                                                        Check-Out
+                                                        <i class="fa-solid fa-chevron-down"></i>
+                                                    </p>
+
+                                                    <input type="text" class="returndatepicker" id="returndate">
+                                                    <p class="date_fx returndate  datetime"><span
+                                                            class="dayfn">22</span>
+                                                        <span class="monfn">Jul</span>' <span class="yrfn">23</span>
+                                                    </p>
+                                                    <p class="sc_terminal returnday  returndayname">
+                                                        Saturday</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 srch_btn_fx pt-2 pt-lg-0 br_tp_1">
+                                                <button class="srch_btn">Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ========== End hotel form Section ========== -->
+                    </div>
+                </div>
+            </div>
+            <!-- ========== End modify saerch form Section ========== -->
+        </section>
+        <!-- ========== End modify search Section ========== -->
+
+        <!-- ========== Start search result Section ========== -->
+        <section class="mt-5">
+            <div class="container">
+                <div class="filter_btn card_style2 d-lg-none" id="fdBTN">
+                    <span>
+                        Filter
+                        <span>
+                            <i class="fa-solid fa-filter"></i>
+                        </span>
+                    </span>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-3 d-none d-lg-block" id="fdShow">
+                        <div class=" shadow ">
+                            <div class="filter-wrap" id="filter-area">
+
+                                <div id="filters-block">
+                                    <div class="accordion" id="filteraccordion">
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-stops">
+                                                <button
+                                                    class="accordion-button shadow-none bg-white fw-bold text-dark pb-1"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                                    aria-controls="panelsStayOpen-collapseOne">
+                                                    Hotel Name
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapseOne"
+                                                class="accordion-collapse collapse show"
+                                                aria-labelledby="panelsStayOpen-stops">
+                                                <div class="accordion-body p-2 ">
+                                                    <div class="panel-body px-3">
+                                                        <div class="hotel_nme_input ">
+                                                            <input type="text" class=""
+                                                                placeholder="Search by hotel name">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-Airlines">
+                                                <button
+                                                    class="accordion-button shadow-none bg-white fw-bold text-dark pb-1"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                                                    aria-controls="panelsStayOpen-collapseTwo">
+                                                    Star Rating
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapseTwo"
+                                                class="accordion-collapse collapse show"
+                                                aria-labelledby="panelsStayOpen-Airlines">
+                                                <div class="accordion-body p-2  relative">
+                                                    <div class="panel-body px-3">
+                                                        <div
+                                                            class="btn-group stop-end d-flex stop_main_gap flex-wrap mb-0">
+                                                            <div class="form-group stop_btn relative star_ht">
+
+                                                                <input type="checkbox" class="filter_checkactive"
+                                                                    id="star1" />
+                                                                <label
+                                                                    class="btn btn-default  filter_check_label star_lbl"
+                                                                    for="star1">
+                                                                    1 <i class="fa fa-star"></i>
+                                                                </label>
+                                                            </div>
+
+                                                            <div class="form-group stop_btn relative star_ht">
+                                                                <input type="checkbox" class="filter_checkactive"
+                                                                    id="star2" />
+
+                                                                <label
+                                                                    class="btn btn-default  filter_check_label star_lbl"
+                                                                    for="star2">
+                                                                    2 <i class="fa fa-star"></i>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-group stop_btn relative star_ht">
+                                                                <input type="checkbox" class="filter_checkactive"
+                                                                    id="star3" />
+
+                                                                <label
+                                                                    class="btn btn-default relative filter_check_label star_lbl"
+                                                                    for="star3">
+                                                                    3 <i class="fa fa-star"></i>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-group stop_btn relative star_ht">
+                                                                <input type="checkbox" class="filter_checkactive"
+                                                                    id="star4" />
+
+                                                                <label
+                                                                    class="btn btn-default relative filter_check_label star_lbl"
+                                                                    for="star4">
+                                                                    4 <i class="fa fa-star"></i>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-group stop_btn relative star_ht">
+                                                                <input type="checkbox" class="filter_checkactive"
+                                                                    id="star5" />
+
+                                                                <label
+                                                                    class="btn btn-default relative filter_check_label star_lbl"
+                                                                    for="star5">
+                                                                    5 <i class="fa fa-star"></i>
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-departure">
+                                                <button
+                                                    class="accordion-button  shadow-none bg-white fw-bold text-dark pb-1"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true"
+                                                    aria-controls="panelsStayOpen-collapseFive">
+                                                    Popular filters
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapseFive"
+                                                class="accordion-collapse collapse show"
+                                                aria-labelledby="panelsStayOpen-departure">
+                                                <div class="accordion-body p-2 pt-0 relative">
+
+                                                    <div class="panel-body px-3 filter-airlines-wrap mt-2">
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Haymarket </span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Mascot</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Darling Harbour</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Haymarket </span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Mascot</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Darling Harbour</span>
+
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-Price">
+                                                <button
+                                                    class="accordion-button collapsed shadow-none bg-white fw-bold text-dark pb-1"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                                                    aria-controls="panelsStayOpen-collapseThree">
+                                                    Price Range
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-Price">
+                                                <div class="accordion-body p-2 pt-0">
+                                                    <div class="panel-body px-3" style="margin-top: -10px;">
+                                                        <br />
+
+                                                        <p>
+                                                            <input type="text" id="amount" readonly
+                                                                style="border:0; color:#d32f2f; font-weight:bold;">
+                                                        </p>
+                                                        <div id="slider-range"></div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-departure">
+                                                <button
+                                                    class="accordion-button collapsed shadow-none bg-white fw-bold text-dark pb-1"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapse6" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapse6">
+                                                    Property type
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapse6" class="accordion-collapse collapse "
+                                                aria-labelledby="panelsStayOpen-departure">
+                                                <div class="accordion-body p-2 pt-0 relative">
+
+                                                    <div class="panel-body px-3 filter-airlines-wrap mt-2">
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Hotels </span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Apartments</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Hostels</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Holiday homes </span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Bed & breakfast</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Motel</span>
+
+                                                        </label>
+
+                                                        <!-- collapse more -->
+                                                        <div class="collapse" id="propertytype">
+                                                            <label
+                                                                class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                                <input class="form-check-input shadow-none"
+                                                                    type="checkbox" name="" id="show_all" />
+                                                                <span class="airline_ft_name_ht">Holiday homes </span>
+
+                                                            </label>
+                                                            <label
+                                                                class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                                <input class="form-check-input shadow-none"
+                                                                    type="checkbox" name="" id="show_all" />
+                                                                <span class="airline_ft_name_ht">Bed & breakfast</span>
+
+                                                            </label>
+                                                            <label
+                                                                class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                                <input class="form-check-input shadow-none"
+                                                                    type="checkbox" name="" id="show_all" />
+                                                                <span class="airline_ft_name_ht">Motel</span>
+
+                                                            </label>
+
+                                                        </div>
+                                                        <span class="show_more_btn" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#propertytype"
+                                                            aria-expanded="false" aria-controls="propertytype">Show
+                                                            more</span>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-departure">
+                                                <button
+                                                    class="accordion-button collapsed shadow-none bg-white fw-bold text-dark pb-1"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapseFour">
+                                                    Customer Ratings
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-departure">
+                                                <div class="accordion-body p-2 pt-0 relative">
+
+                                                    <div class="panel-body px-3 filter-airlines-wrap mt-2">
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">4.5 & Above <strong>
+                                                                    Excellent </strong></span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">4 & Above <strong> Very
+                                                                    Good</strong></span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">3.5 & Above <strong>Good
+                                                                </strong></span>
+
+                                                        </label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-departure">
+                                                <button
+                                                    class="accordion-button collapsed shadow-none bg-white fw-bold text-dark pb-1"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapse7" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapse7">
+                                                    Aminities
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapse7" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-departure">
+                                                <div class="accordion-body p-2 pt-0 relative">
+
+                                                    <div class="panel-body px-3 filter-airlines-wrap mt-2">
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Wifi</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Swimming Pool
+                                                            </span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Spa</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Caretaker</span>
+
+                                                        </label>
+
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht"> Balcony/Terrace</span>
+
+                                                        </label>
+                                                        <!-- collapse more -->
+                                                        <div class="collapse" id="aminitiShow">
+                                                            <label
+                                                                class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                                <input class="form-check-input shadow-none"
+                                                                    type="checkbox" name="" id="show_all" />
+                                                                <span class="airline_ft_name_ht">Spa</span>
+
+                                                            </label>
+                                                            <label
+                                                                class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                                <input class="form-check-input shadow-none"
+                                                                    type="checkbox" name="" id="show_all" />
+                                                                <span class="airline_ft_name_ht">Caretaker</span>
+
+                                                            </label>
+
+                                                            <label
+                                                                class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                                <input class="form-check-input shadow-none"
+                                                                    type="checkbox" name="" id="show_all" />
+                                                                <span class="airline_ft_name_ht"> Balcony/Terrace</span>
+
+                                                            </label>
+                                                        </div>
+
+                                                        <span class="show_more_btn" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#aminitiShow"
+                                                            aria-expanded="false" aria-controls="aminitiShow">Show
+                                                            more</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-departure">
+                                                <button
+                                                    class="accordion-button collapsed shadow-none bg-white fw-bold text-dark pb-1"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapse9" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapse9">
+                                                    Bed preference
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapse9" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-departure">
+                                                <div class="accordion-body p-2 pt-0 relative">
+
+                                                    <div class="panel-body px-3 filter-airlines-wrap mt-2">
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Twin beds</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Double bed
+                                                            </span>
+
+                                                        </label>
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-departure">
+                                                <button
+                                                    class="accordion-button collapsed shadow-none bg-white fw-bold text-dark pb-1"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapse10" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapse10">
+                                                    Meals
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapse10" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-departure">
+                                                <div class="accordion-body p-2 pt-0 relative">
+
+                                                    <div class="panel-body px-3 filter-airlines-wrap mt-2">
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Self catering</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Breakfast included
+                                                            </span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht"> Breakfast & dinner
+                                                                included
+                                                            </span>
+
+                                                        </label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-departure">
+                                                <button
+                                                    class="accordion-button collapsed shadow-none bg-white fw-bold text-dark pb-1"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapse11" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapse11">
+                                                    Payment type
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapse11" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-departure">
+                                                <div class="accordion-body p-2 pt-0 relative">
+
+                                                    <div class="panel-body px-3 filter-airlines-wrap mt-2">
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Reserve now, pay later</span>
+
+                                                        </label>
+                                                  
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-departure">
+                                                <button
+                                                    class="accordion-button collapsed shadow-none bg-white fw-bold text-dark pb-1"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapse8" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapse8">
+                                                    Fun things to do
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapse8" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-departure">
+                                                <div class="accordion-body p-2 pt-0 relative">
+
+                                                    <div class="panel-body px-3 filter-airlines-wrap mt-2">
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Wifi</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Swimming Pool
+                                                            </span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Spa</span>
+
+                                                        </label>
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht">Caretaker</span>
+
+                                                        </label>
+
+                                                        <label
+                                                            class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                            <input class="form-check-input shadow-none" type="checkbox"
+                                                                name="" id="show_all" />
+                                                            <span class="airline_ft_name_ht"> Balcony/Terrace</span>
+
+                                                        </label>
+                                                        <!-- collapse more -->
+                                                        <div class="collapse" id="funthings">
+                                                            <label
+                                                                class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                                <input class="form-check-input shadow-none"
+                                                                    type="checkbox" name="" id="show_all" />
+                                                                <span class="airline_ft_name_ht">Spa</span>
+
+                                                            </label>
+                                                            <label
+                                                                class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                                <input class="form-check-input shadow-none"
+                                                                    type="checkbox" name="" id="show_all" />
+                                                                <span class="airline_ft_name_ht">Caretaker</span>
+
+                                                            </label>
+
+                                                            <label
+                                                                class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                                <input class="form-check-input shadow-none"
+                                                                    type="checkbox" name="" id="show_all" />
+                                                                <span class="airline_ft_name_ht"> Balcony/Terrace</span>
+
+                                                            </label>
+                                                        </div>
+
+                                                        <span class="show_more_btn" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#funthings"
+                                                            aria-expanded="false" aria-controls="funthings">Show
+                                                            more</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header" id="panelsStayOpen-Arrival">
+                                                <button
+                                                    class="accordion-button collapsed shadow-none bg-white fw-bold text-dark "
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapseFive">
+                                                    Landmarks
+                                                </button>
+                                            </h4>
+                                            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-Arrival">
+                                                <div class="accordion-body p-2 pt-0 relative">
+
+                                                    <div class="panel-body px-3 filter-airlines-wrap mt-2">
+                                                        <label
+                                                        class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                        <input class="form-check-input shadow-none" type="checkbox"
+                                                            name="" id="show_all" />
+                                                        <span class="airline_ft_name_ht">Circular Quay</span>
+
+                                                    </label>
+                                                    <label
+                                                        class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                        <input class="form-check-input shadow-none" type="checkbox"
+                                                            name="" id="show_all" />
+                                                        <span class="airline_ft_name_ht">Harbour Bridge
+                                                        </span>
+
+                                                    </label>
+                                                    <label
+                                                        class="d-flex gap-3 fsz_14 airline_lbl align-items-baseline">
+                                                        <input class="form-check-input shadow-none" type="checkbox"
+                                                            name="" id="show_all" />
+                                                        <span class="airline_ft_name_ht"> Bondi Beach
+                                                        </span>
+
+                                                    </label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-9 ">
+                        <div class="">
+                            <div class="row res_d_none my-2 bg-white p-1 rounded d-none d-md-flex">
+                                <div class="col-3">
+                                    <div>
+                                        <span class="flt_hd_font">
+                                            <label for="airline_sort" class="sort_check_box_hidden">
+                                                <input type="radio" name="sortfilter" id="airline_sort"
+                                                    class="invisible">
+
+                                                <span class="sort_check_box_span"> Popular</span>
+
+                                                <i class="fa-solid fa-arrow-down ms-2"></i>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-8 p-0">
+                                    <div class="flt_hd_fx row">
+                                        <span class="flt_hd_font col-4 text-start">
+                                            <label for="DEPARTURE_sort" class="sort_check_box_hidden">
+                                                <input type="radio" name="sortfilter" id="DEPARTURE_sort"
+                                                    class="invisible">
+
+                                                <span class="sort_check_box_span"> User Rating </span>
+
+                                                <i class="fa-solid fa-arrow-down ms-2"></i>
+                                            </label>
+                                        </span>
+
+                                        <span class="flt_hd_font col-4 text-center">
+                                            <label for="DURATION_sort"
+                                                class="sort_check_box_hidden justify-content-center">
+                                                <input type="radio" name="sortfilter" id="DURATION_sort"
+                                                    class="invisible">
+
+                                                <span class="sort_check_box_span"> Price (Highest First)</span>
+
+                                                <i class="fa-solid fa-arrow-down ms-2"></i>
+                                            </label>
+                                        </span>
+
+                                        <span class="flt_hd_font col-4 text-end">
+                                            <label for="ARRIVAL_sort" class="sort_check_box_hidden justify-content-end">
+                                                <input type="radio" name="sortfilter" id="ARRIVAL_sort"
+                                                    class="invisible">
+
+                                                <span class="sort_check_box_span"> Price (Lowest First)
+                                                </span>
+
+                                                <i class="fa-solid fa-arrow-down ms-2"></i>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <!-- ==========  Start result card Section ========== -->
+                        <div class="card py-2 px-3  my-3 shadow">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="">
+
+                                        <span class="ht_img"><img src="../../assets/images/europe/7.jpg"
+                                                alt="hotel"></span>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 ht_border">
+                                    <div>
+                                        <h3 class="ht_name_fx">
+                                            <span class="ht_name_span">Sterling Melborne Varca</span>
+                                            <span class="start_icon2">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                        </h3>
+                                        <h6 class="ht_name_fx ht_location">
+                                            <span>
+                                                <i class="fa-solid fa-location-dot"></i>
+                                            </span>
+                                            <span>
+                                                605/D, Pedda Nomeo,Melborne
+                                            </span>
+                                        </h6>
+                                        <h6 class="ht_name_fx ht_location" style="color: #000;">
+                                            20.19 km From (Melborne,Australia) <a href="#" class="showonmap">Show on
+                                                map</a>
+                                        </h6>
+
+                                        <div class="ht_name_fx mb-3">
+                                            <span class="amnities">
+                                                <i class="fa fa-broom"></i>
+                                                Room service
+                                            </span>
+                                            <span class="amnities">
+                                                <i class="fa fa-swimmer"></i> Pool
+                                            </span>
+                                            <span class="amnities"><i class="fa fa-utensils"></i> Restaurent
+                                            </span>
+                                            <span class="amnities"><i class="fa fa-wifi"></i> Wifi</span>
+                                            <span class="amnities"><i class="fa fa-dumbbell"></i> Gym</span>
+                                        </div>
+
+                                        <p class="freebf mt-3"><span class="badge bg-primary">3.5</span> <span
+                                                class="text-primary fsz_12 fw-bold">Good</span> <span
+                                                class="fsz_12">(1,114 Reviews)</span></p>
+
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="col-sm-12 col-md-3 mt-3 mt-md-0 d-md-flex  align-items-center justify-content-center">
+                                    <div class="ht_price_btnfx flex-row flex-md-column">
+                                        <h4 class="price">$ 642 <span class="tax d-none">+ $ 30 </span></h4>
+
+                                        <span class="btn_det_fx">
+                                            <button class="btn-sm  viewPrice_btn">Select Room</button>
+
+
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="card py-2 px-3  my-3 shadow">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="">
+
+                                        <span class="ht_img"><img src="../../assets/images/europe/8.jpg"
+                                                alt="hotel"></span>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 ht_border">
+                                    <div>
+                                        <h3 class="ht_name_fx">
+                                            <span class="ht_name_span">Sterling Melborne Varca</span>
+                                            <span class="start_icon2">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                        </h3>
+                                        <h6 class="ht_name_fx ht_location">
+                                            <span>
+                                                <i class="fa-solid fa-location-dot"></i>
+                                            </span>
+                                            <span>
+                                                605/D, Pedda Nomeo,Melborne
+                                            </span>
+                                        </h6>
+                                        <h6 class="ht_name_fx ht_location" style="color: #000;">
+                                            20.19 km From (Melborne,Australia) <a href="#" class="showonmap">Show on
+                                                map</a>
+                                        </h6>
+
+                                        <div class="ht_name_fx mb-3">
+                                            <span class="amnities">
+                                                <i class="fa fa-broom"></i>
+                                                Room service
+                                            </span>
+                                            <span class="amnities">
+                                                <i class="fa fa-swimmer"></i> Pool
+                                            </span>
+                                            <span class="amnities"><i class="fa fa-utensils"></i> Restaurent
+                                            </span>
+                                            <span class="amnities"><i class="fa fa-wifi"></i> Wifi</span>
+                                            <span class="amnities"><i class="fa fa-dumbbell"></i> Gym</span>
+                                        </div>
+                                        <p class="freebf mt-3"><span class="badge bg-primary">3.5</span> <span
+                                                class="text-primary fsz_12 fw-bold">Good</span> <span
+                                                class="fsz_12">(314 Reviews)</span></p>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="col-sm-12 col-md-3 mt-3 mt-md-0 d-md-flex  align-items-center justify-content-center">
+                                    <div class="ht_price_btnfx flex-row flex-md-column">
+                                        <h4 class="price">$ 552 <span class="tax d-none">+ $ 30 </span></h4>
+
+                                        <span class="btn_det_fx">
+                                            <button class="btn-sm  viewPrice_btn">Select Room</button>
+
+
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- ========== End result card Section ========== -->
+
+                    </div>
+                </div>
+        </section>
+        <!-- ========== End search result Section ========== -->
+
+
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+
+    <!-- ========== Start Modal animation Section ========== -->
+    <modal-section-tag>
+
+        <header-nav-modal>
+
+            <!-- Start login drop down Section  -->
+            <div class="modal fade" id="logindropdownModal" tabindex="-1" aria-labelledby="logindropdownModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm login_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <ul class="login-menu ">
+                                <li>
+                                    <a class="login-item" href="javascript:void(0)" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal"><i class="fa-solid fa-key"></i><span>
+                                            Customer Login
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="login-item" href="javascript:void(0)" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal"><i class="fa-solid fa-key"></i><span>
+                                            Agent Login</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="login-item" href="#"><i class="fa-solid fa-note-sticky"></i>
+                                        <span>My bookings</span></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End login drop down Section  -->
+
+            <!-- Start Country drop down Section  -->
+            <div class="modal fade" id="countryfilterModal" tabindex="-1" aria-labelledby="countryfilterModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm country_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="contry_select_mdlbody">
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Country drop down Section  -->
+
+            <!-- Start price drop down Section  -->
+            <div class="modal fade" id="pricefilterModal" tabindex="-1" aria-labelledby="pricefilterModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm currency_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="currency_select_mdlbody">
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End price drop down Section  -->
+
+        </header-nav-modal>
+
+    </modal-section-tag>
+    <!-- ========== End Modal Section ========== -->
+
+
+
+    <!-- ========== Start room repeat block Section ========== -->
+    <hotel-script-tag>
+        <script id="room-repeat-template" type="text/x-handlebars-template" defer="defer">
+                <div id="room-{{roomNumber}}">
+                  <h5 class="title"><i class="fa fa-hotel"></i>&nbsp;&nbsp;Room
+                    {{roomNumber}}</h5>
+                  <div class="item-occupancy cfx" id="child-age-block-{{roomNumber}}">
+                    <div class="item-people"style="width: 40%;">
+                      <label> <i class="fa fa-male"></i> Adults</label>
+                      <select
+                        id="adults-{{roomNumber}}"
+                        class="form-select shadow-none"
+                        onchange="countOccupancies()"
+                        name="adults{{roomNumber}}"
+                      >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                      </select>
+                    </div>
+                    <div class="item-people" style="width: 40%;">
+                      <label><i class="fa fa-child"></i> Children</label>
+                      <select
+                        id="children-{{roomNumber}}"
+                        class="form-select shadow-none"
+                        name="childs{{roomNumber}}"
+                        onchange="renderAgeDropdown(this, {{roomNumber}})"
+                      >
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+                    </div>
+          
+                  </div>
+                  <!-- children-age-wrap // -->
+                </div>
+              </script>
+
+        <script id="child-age-repeat-template" type="text/x-handlebars-template" defer="defer">
+                <div
+                  class="item-people age-child"
+                  id="child-{{roomNumber}}-{{childNumber}}"
+                >
+                  <label>Age {{childNumber}}</label>
+                  <select
+                    id="childage-{{roomNumber}}-{{childNumber}}"
+                    class="form-select shadow-none"
+                    name="child_age{{roomNumber}}_{{childNumber}}"
+                  >
+                    <option value="0"> 1</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                  </select>
+                </div>
+              </script>
+    </hotel-script-tag>
+    <!-- ========== End room repeat block Section ========== -->
+
+
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- datepicker -->
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/customjquery.js"></script>
+
+    <!-- custom js -->
+    <script src="../../assets/js/datepicker.js"></script>
+    <script src="../../assets/js/internal.js"></script>
+    <script src="../../assets/js/handlebars.js"></script>
+    <script src="../../assets/js/hotelroom.js"></script>
+
+</body>
+
+</html>

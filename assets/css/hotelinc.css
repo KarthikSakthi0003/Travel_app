@@ -1,0 +1,81 @@
+:root{
+    --btn_bg: #d32f2f;
+}
+
+.occupancy-dropdown .title {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  background-color: #eee;
+  color: var(--btn_bg) !important;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 8px 10px;
+}
+.occupancy-dropdown .title i {
+  font-size: 16px;
+}
+.occupancy-dropdown .item-occupancy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.occupancy-dropdown .item-occupancy label {
+  font-size: 12px;
+}
+
+.occupancy-dropdown .item-occupancy .form-control {
+  margin-bottom: 7px;
+  display: inline-block;
+}
+.occupancy-dropdown .item-occupancy .item-people:not(.age-child) {
+  color: var(--btn_bg) !important;
+}
+
+input#room_count {
+  border: 1px solid lightgray;
+  outline: none;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.input_grp {
+  display: flex;
+}
+.input-static {
+  /* font-size: 13px; */
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+.fsz_10 {
+  font-size: 10px;
+}
+div#clone_input input,
+input#insurancepax_count {
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 60px;
+  height: 30px;
+}
+div#clone_input {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  margin-top: 1rem;
+  width: 270px;
+}
+div#travellerdetailshotel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#occ-room-count,
+#occ-adult-count,
+#occ-child-count {
+  font-size: 24px;
+  font-weight: 700;
+}

@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVELEAN</title>
+
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="../../../assets/css/jquery-ui.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/flightform.css">
+    <link rel="stylesheet" href="../../../assets/css/internal.css">
+    <link rel="stylesheet" href="../../../assets/css/payment.css">
+    <link rel="stylesheet" href="../../../assets/css/responsive.css">
+</head>
+
+<body>
+    <!-- ========== Start header Section ========== -->
+    <header class="bg_hdr">
+        <div class="container-md">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <!-- <img src="../../../assets/imges/logo/logo.jpeg" alt="TRAVELEAN-logo" class="hdr_logo" /> -->
+                        <span class="text-white fw-bold"> TRAVELEAN</span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse mt-3 mt-md-0" id="navbarSupportedContent">
+
+                        <div class="intrnal_hdr mb-2 mb-lg-0">
+                            <a class="nav-link active" href="#"><i class="fa-solid fa-plane"></i><span>
+                                    Flight</span></a>
+                            <a class="nav-link" href="#"><i class="fa-solid fa-hotel"></i> <span>Hotel</span></a>
+                            <a class="nav-link" href="#"><i class="fa-solid fa-car main_nav_ic"></i><span>
+                                    Transfer</span></a>
+                        </div>
+
+                        <ul
+                            class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-3 flex-row flex-wrap gap-sm-0">
+                            <li class="nav-item hdr_social_link_fx">
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item country_select_filter" type="button" data-bs-toggle="modal"
+                                data-bs-target="#pricefilterModal">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                                AUD
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </li>
+                            <li class="nav-item country_select_filter" type="button" data-bs-toggle="modal"
+                                data-bs-target="#countryfilterModal">
+                                <span class="flag_icon">
+                                    <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                </span>
+                                AUS <i class="fa-solid fa-chevron-down"></i>
+                            </li>
+
+                            <li class="nav-item" type="button">
+                                <span class="Login_btn dd_btn" data-bs-toggle="modal"
+                                    data-bs-target="#logindropdownModal">
+                                    Login / Signup <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- ========== End header Section ========== -->
+
+    <main>
+        <section>
+            <div class="container pt-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">My account</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Bookings</li>
+                    </ol>
+                </nav>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-sm-10">
+                        <div class="card shadow-lg p-4">
+                            <nav>
+                                <div class="nav nav-tabs mybooking_type" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="navUpcoming-tab" data-bs-toggle="tab"
+                                        data-bs-target="#navUpcoming" type="button" role="tab"
+                                        aria-controls="navUpcoming" aria-selected="true"><i
+                                            class="fa-solid fa-suitcase me-2"></i> Upcoming</button>
+                                    <button class="nav-link" id="navCancelled-tab" data-bs-toggle="tab"
+                                        data-bs-target="#navCancelled" type="button" role="tab"
+                                        aria-controls="navCancelled" aria-selected="false"><i
+                                            class="fa-solid fa-ban me-2"></i>Cancelled</button>
+                                    <button class="nav-link" id="navCompleted-tab" data-bs-toggle="tab"
+                                        data-bs-target="#navCompleted" type="button" role="tab"
+                                        aria-controls="navCompleted" aria-selected="false"><i
+                                            class="fa-regular fa-rectangle-list me-2"></i>Completed</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content mt-3" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="navUpcoming" role="tabpanel"
+                                    aria-labelledby="navUpcoming-tab">...</div>
+                                <div class="tab-pane fade" id="navCancelled" role="tabpanel"
+                                    aria-labelledby="navCancelled-tab">
+                                    ...</div>
+                                <div class="tab-pane fade" id="navCompleted" role="tabpanel"
+                                    aria-labelledby="navCompleted-tab">
+                                    <div class="">
+                                        <div class="card p-3">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class=" airline mb-3">
+                                                    <img src="../../../assets/images/flight/1.jpg" alt="">
+                                                    <div class="airline_name_fx_res airline_name_fx_resR">
+                                                        <p class="fw-bold fsz_13 r_airlinename">AMERICAN AIRLINE</p>
+                                                        <p class="text-muted iconInr">6E 2033</p>
+                                                    </div>
+                                                </div>
+                                                <p class="badge rounded-pill bg-danger" type="button"><i
+                                                        class="fa-solid fa-file-arrow-down"></i> Download Invoice</p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-7">
+                                                    <div class="row">
+                                                        <div class="col-4 text-start">
+                                                            <p class="h_5 m-0 fw-bold">21:20</p>
+                                                            <p class="fsz_14 ">
+                                                                <b> Thu, 01 Feb 24 </b>
+                                                            </p>
+                                                            <p class="fs_6"><span> Sydney [SYD]</span> <br>
+                                                                <span> Kingsford Smith </span><br>
+                                                                <span> Terminal 2 </span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-4 text-center">
+                                                            <p class="flt_td_txt  fw-light">02 h 15 m</p>
+                                                            <div class="stop_border_fx">
+                                                                <span class="stop_border"></span> <i
+                                                                    class="fa-solid fa-plane"></i>
+                                                            </div>
+                                                            <p class="time_text">Non stop</p>
+                                                        </div>
+                                                        <div class="col-4 text-end">
+                                                            <p class="h_5 m-0 fw-bold">21:20</p>
+                                                            <p class="fsz_14 ">
+                                                                <b> Thu, 03 Feb 24 </b>
+                                                            </p>
+                                                            <p class="fs_6"><span> Melbourne [MEL]</span> <br>
+                                                                <span>Tullamarine </span><br>
+                                                                <span> Terminal 4 </span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+
+                                                            <tbody>
+
+                                                                <tr>
+                                                                    <td>
+                                                                        <p class="fs_6 text-muted">
+                                                                            Travel Class</p>
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <p class="fs_6 text-end text-md-start fw-bold">
+                                                                            Economy
+                                                                        </p>
+                                                                    </td>
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <p class="fs_6 text-muted ">
+                                                                            Check-in baggage</p>
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <p class="fs_6 text-end text-md-start fw-bold">
+                                                                            15 Kg / adult
+                                                                        </p>
+                                                                    </td>
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <p class="fs_6 text-muted">Cabin
+                                                                            baggage</p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p class="fs_6 text-end text-md-start fw-bold">
+                                                                            7 Kg / adult
+                                                                        </p>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <!-- newsletter section start -->
+            <form class="newsletter_form shadow-sm my-4">
+                <div class="">
+                    <div class="newsletter_icon"><i class="fa-solid fa-envelope"></i></div>
+                    <h1>SUBSCRIBE</h1>
+                    <h5>Subscribe to our newsletter &amp; stay update</h5>
+                </div>
+                <div class="newsletter_form_fx">
+                    <input type="text" class="newsletter_form_email" id="newsletter_name" name="newsletter_name"
+                        placeholder="Your Name" required="" autocomplete="off">
+                    <input type="mail" class="newsletter_form_email" id="email" name="email" placeholder="Your Email"
+                        required="" autocomplete="off">
+                    <button class="newsletter_form_btn" value="Submit">Submit</button>
+                </div>
+            </form>
+            <!-- newsletter end -->
+
+            <!-- why travell-app  start-->
+            <section class="my-4">
+                <div class="container-fluid bg_color">
+                    <div class="container">
+                        <ul class="aboutus_ul">
+                            <li class="about_link active" onclick="openAbout(event,'about_info')">Why travell-app
+                                travels?
+                                <span class="iconrotate"><i class="fa-solid fa-chevron-down"
+                                        class="rotateIcon"></i></span>
+                            </li>
+
+                            <li class="about_link" onclick="openAbout(event,'company_info')">Company Information <span
+                                    class="iconrotate"><i class="fa-solid fa-chevron-down"
+                                        class="rotateIcon"></i></span></span> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="about_link_content mt-3" id="about_info" style="display: block;">
+                        <div class="about_desc">
+                            <h3>Why travell-app travels ?</h3>
+                            <p class="about_p">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                                praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque
+                                vero
+                                quia amet corporis omnis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non
+                                enim
+                                quasi provident praesentium dolorem velit, eaque cum laborum ut maxime itaque minima
+                                dolor
+                                unde neque vero quia amet corporis omnis.
+                            </p>
+                            <p class="about_p">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                                praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque
+                                vero
+                                quia amet corporis omnis.
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                                praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque
+                                vero
+                                quia amet corporis omnis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non
+                                enim
+                                quasi provident praesent
+                            </p>
+                            <p class="about_p">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                                praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque
+                                vero
+                                quia amet corporis omnis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about_link_content mt-3" id="company_info">
+                        <div class="about_desc">
+                            <h3>Company Information</h3>
+                            <p class="about_p">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                                praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque
+                                vero
+                                quia amet corporis omnis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non
+                                enim
+                                quasi provident praesentium dolorem velit, eaque cum laborum ut maxime itaque minima
+                                dolor
+                                unde neque vero quia amet corporis omnis.
+                            </p>
+                            <p class="about_p">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                                praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque
+                                vero
+                                quia amet corporis omnis.
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                                praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque
+                                vero
+                                quia amet corporis omnis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non
+                                enim
+                                quasi provident praesent
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- why travell-app end -->
+
+            <!-- member of section start -->
+            <section class="my-4 shadow-sm accepted_card_bg p-4">
+                <div class="container w-50">
+                    <div class="accepted_card_fx">
+                        <p class="accepted_card_hdng">We Accept :</p>
+                        <ul class="accepted_card_ul">
+                            <li>
+                                <img src="../../../assets/images/footer/visa.jpg" alt="Visa-card">
+                            </li>
+                            <li>
+                                <img src="../../../assets/images/footer/Mastercard.png" alt="Mastercard">
+                            </li>
+                            <li>
+                                <img src="../../../assets/images/footer/americanexpress.png" alt="americanexpress">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="accepted_card_fx justify-content-center mt-3">
+                        <p class="accepted_card_hdng">Member of :</p>
+                        <ul class="accepted_card_ul">
+                            <li>
+                                <img src="../../../assets/images/footer/iata.png" alt="iata-card">
+                            </li>
+                            <li>
+                                <img src="../../../assets/images/footer/tafl.jpeg" alt="tafl">
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- member of section end -->
+        </section>
+    </main>
+
+    <footer>
+        <!--nav link start  -->
+        <section>
+            <div class="container searchform_width">
+                <div class="my-3">
+                    <p class="ftr_hd">PRODUCT OFFERING</p>
+                    <ul class="ftr_nav">
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="my-3">
+                    <p class="ftr_hd">TRAVELEAN</p>
+                    <ul class="ftr_nav">
+                        <li><a href="#">
+                                About us,
+                            </a></li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="my-3">
+                    <p class="ftr_hd">ABOUT THE SITE</p>
+                    <ul class="ftr_nav">
+                        <li><a href="#">
+                                Customer Support,
+                            </a></li>
+                        <li>
+                            <a href="#">Privacy Policy, </a>
+                        </li>
+                        <li>
+                            <a href="#">User Agreement,</a>
+                        </li>
+                        <li>
+                            <a href="#"> Terms of Service, </a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--nav link end  -->
+        <hr>
+        <!-- social media link start -->
+        <section>
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center flex-column flex-sm-row gap-2">
+                    <div class="ftr_social_fx">
+                        <p>Follow us</p>
+                        <div class="hdr_social_link_fx footer_social">
+                            <a href="#" target="_blank" class="hdr_social_link">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" target="_blank" class="hdr_social_link">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="#" target="_blank" class="hdr_social_link">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="copy-right">
+                        <p>copyright © 2024 TRAVELEAN <span>Developed by
+                                <a href="http://travelPd.com" target="_blank">
+                                    TrvelPD</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- social media link end -->
+    </footer>
+    <!-- ========== Start Modal animation Section ========== -->
+    <modal-section-tag>
+
+        <header-nav-modal>
+
+            <!-- Start login drop down Section  -->
+            <div class="modal fade" id="logindropdownModal" tabindex="-1" aria-labelledby="logindropdownModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm login_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <ul class="login-menu ">
+                                <li>
+                                    <a class="login-item" href="javascript:void(0)" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal"><i class="fa-solid fa-key"></i><span>
+                                            Customer Login
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="login-item" href="javascript:void(0)" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal"><i class="fa-solid fa-key"></i><span>
+                                            Agent Login</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="login-item" href="#"><i class="fa-solid fa-note-sticky"></i>
+                                        <span>My bookings</span></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End login drop down Section  -->
+
+            <!-- Start Country drop down Section  -->
+            <div class="modal fade" id="countryfilterModal" tabindex="-1" aria-labelledby="countryfilterModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm country_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="contry_select_mdlbody">
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Country drop down Section  -->
+
+            <!-- Start price drop down Section  -->
+            <div class="modal fade" id="pricefilterModal" tabindex="-1" aria-labelledby="pricefilterModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm currency_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="currency_select_mdlbody">
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End price drop down Section  -->
+
+        </header-nav-modal>
+
+
+
+
+    </modal-section-tag>
+    <!-- ========== End Modal Section ========== -->
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="../../../assets/js/home.js"></script>
+</body>
+
+</html>

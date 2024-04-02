@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVELEAN</title>
+
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="../../../assets/css/jquery-ui.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/flightform.css">
+    <link rel="stylesheet" href="../../../assets/css/internal.css">
+    <link rel="stylesheet" href="../../../assets/css/payment.css">
+    <link rel="stylesheet" href="../../../assets/css/responsive.css">
+</head>
+
+<body>
+    <!-- ========== Start header Section ========== -->
+    <header class="bg_hdr">
+        <div class="container-md">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <!-- <img src="../../../assets/imges/logo/logo.jpeg" alt="TRAVELEAN-logo" class="hdr_logo" /> -->
+                        <span class="text-white fw-bold"> TRAVELEAN</span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse mt-3 mt-md-0" id="navbarSupportedContent">
+
+                        <div class="intrnal_hdr mb-2 mb-lg-0">
+                            <a class="nav-link active" href="#"><i class="fa-solid fa-plane"></i><span>
+                                    Flight</span></a>
+                            <a class="nav-link" href="#"><i class="fa-solid fa-hotel"></i> <span>Hotel</span></a>
+                            <a class="nav-link" href="#"><i class="fa-solid fa-car main_nav_ic"></i><span>
+                                    Transfer</span></a>
+                        </div>
+
+                        <ul
+                            class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-3 flex-row flex-wrap gap-sm-0">
+                            <li class="nav-item hdr_social_link_fx">
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item country_select_filter" type="button" data-bs-toggle="modal"
+                                data-bs-target="#pricefilterModal">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                                AUD
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </li>
+                            <li class="nav-item country_select_filter" type="button" data-bs-toggle="modal"
+                                data-bs-target="#countryfilterModal">
+                                <span class="flag_icon">
+                                    <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                </span>
+                                AUS <i class="fa-solid fa-chevron-down"></i>
+                            </li>
+
+                            <li class="nav-item" type="button">
+                                <span class="Login_btn dd_btn" data-bs-toggle="modal"
+                                    data-bs-target="#logindropdownModal">
+                                    Login / Signup <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- ========== End header Section ========== -->
+
+
+    <main>
+
+
+        <!-- {/*{/* breadcrumb start */} -->
+        <section class="container-fluid container-xl d-md-none pt-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Home</a>
+                    </li>
+
+                    <li class="breadcrumb-item">
+                        <a href="#">Cancellation</a>
+                    </li>
+                </ol>
+            </nav>
+        </section>
+        <!-- {/*{/* breadcrumb  end */} -->
+
+
+        <section>
+            <div>
+                <div class="container my-4 ">
+                    <div class="d-flex justify-content-center gap-2 text-start justify-content-md-between align-items-center flex-wrap ">
+                        <h4>
+                            Your Booking has been cancelled
+                        </h4>
+                        <p><span><b> Booking Id: </b> <span>NH2001224455547</span></span></p>
+                        <p><span><b> Refrence PNR: </b> <span>NH2001224455547</span></span></p>
+                    </div>
+                </div>
+                <div class="container-fluid p-0  relative">
+                    <span class="bgGradient"></span>
+                </div>
+                <div class="container-fluid container-xl">
+                    <div class="row ">
+                        <div class="col-lg-9" id="Summary">
+                            <div class="card shadow-lg p-3 ">
+                                <div class="flDetailHdr my-4">
+                                    <div>
+                                        <h6>
+                                            <b>Bangalore Times </b>
+                                        </h6>
+                                        <p class="d-flex gap-2">
+                                            <span class="scheduleDay">Mon, 18 Dec 2023</span>
+                                            -
+                                            <span class="scheduleDay">Tue, 19 Dec 2023</span>
+                                        </p>
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- {/* cancelation policy start */} -->
+                                <section class="refundSection">
+                                    <div>
+                                        <div class="refundHdr">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h3 class="fontSize16 blackFont">
+                                                    Refund Status
+                                                </h3>
+                                                <p class="fw-bold text-danger">Total Refund Processed: $500</p>
+                                            </div>
+                                        </div>
+                                        <div class="flightDetails reviewCanPolicyWrapper">
+                                            <div class="cancSecWrap">
+                                                <p class="flightDetailsInfo makeFlex hrtlCenter">
+                                                    <img src="../../../assets/images/flight/1.jpg" alt=""
+                                                        class="itiflightDetailsInfo_img" />
+                                                    <span class="blackFont darkText appendLeft10">
+                                                        SYD-MEL
+                                                    </span>
+                                                </p>
+                                                <div class="timeLineDetailsInfo makeFlex ">
+                                                    <div class="cancInfoLeft">
+                                                        <p>Cancel Between (IST) :</p>
+                                                    </div>
+                                                    <div class="flexOne">
+
+                                                        <p class="cancGradline"></p>
+                                                        <div class="cancTimeline">
+                                                            <div class="cancTimeNode">
+                                                                <p>
+                                                                    <span class="blackFont">Booking Cancelled</span>
+                                                                    <br>
+                                                                    <span class="fontSize12 ">
+                                                                        Mon, 18 Dec 2023 - 06:00
+                                                                    </span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="cancTimeNode">
+                                                                <p>
+                                                                    <span class="blackFont">Refund attempted</span>
+                                                                    <br>
+                                                                    <span class="fontSize12 ">
+                                                                        Mon, 18 Dec 2023 - 06:00
+                                                                    </span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="cancTimeNode">
+                                                                <p>
+                                                                    <span class="blackFont">Refund transfered</span>
+                                                                    <br>
+                                                                    <span class="fontSize12 ">
+                                                                        Mon, 18 Dec 2023 - 06:00
+                                                                    </span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 my-3 my-lg-0">
+                            <div class="p-3 card shadow">
+                                <h5 class="fw-bold my-1">Fare Summary</h5>
+                                <div>
+
+                                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                                        <div class="accordion-item border-0 border-bottom pb-2">
+                                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                                <button class="accordion-button collapsed shadow-none fare_summry_btn"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapseOne">
+                                                    <div class="fare_summry_hd">
+                                                        <img src="../../../assets/images/icon/minus.png" alt="" />
+                                                        <span class="fontSize14 fw-bold">Base Fare</span>
+
+                                                        <span class="fontSize14 fw-bold">₹ 5,036</span>
+                                                    </div>
+                                                </button>
+
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-headingOne">
+                                                <div class="fare_summary_dtls">
+                                                    <p class="fare_summary_dtls_fx text-muted">
+                                                        <span>Adult(s) (1 X ₹ 5,036)</span> <span>₹ 5,036</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item border-0">
+                                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                                <button class="accordion-button collapsed shadow-none fare_summry_btn"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapseTwo">
+                                                    <div class="fare_summry_hd">
+                                                        <img src="../../../assets/images/icon/minus.png" alt="" />
+                                                        <span class="fontSize14 fw-bold r_airlinename">
+                                                            Taxes and Surcharges
+                                                        </span>
+                                                        <span class="fontSize14 fw-bold">
+                                                            ₹ 1,136
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-headingTwo">
+                                                <div class="fare_summary_dtls">
+                                                    <p class="fare_summary_dtls_fx text-muted">
+                                                        <span>Taxes </span>
+                                                        <span>₹ 1,136</span>
+                                                    </p>
+                                                    <p class="fare_summary_dtls_fx text-muted">
+                                                        <span>Surcharges</span>
+                                                        <span>₹ 0</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="TotalFare border-top mt-2 pt-3 ">
+                                        <p class="TotalFare_fx">
+                                            <span>Total Amount</span> <span>₹ 5,862</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <!-- ========== Start Modal animation Section ========== -->
+    <modal-section-tag>
+
+        <header-nav-modal>
+
+            <!-- Start login drop down Section  -->
+            <div class="modal fade" id="logindropdownModal" tabindex="-1" aria-labelledby="logindropdownModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm login_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <ul class="login-menu ">
+                                <li>
+                                    <a class="login-item" href="javascript:void(0)" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal"><i class="fa-solid fa-key"></i><span>
+                                            Customer Login
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="login-item" href="javascript:void(0)" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal"><i class="fa-solid fa-key"></i><span>
+                                            Agent Login</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="login-item" href="#"><i class="fa-solid fa-note-sticky"></i>
+                                        <span>My bookings</span></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End login drop down Section  -->
+
+            <!-- Start Country drop down Section  -->
+            <div class="modal fade" id="countryfilterModal" tabindex="-1" aria-labelledby="countryfilterModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm country_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="contry_select_mdlbody">
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Country drop down Section  -->
+
+            <!-- Start price drop down Section  -->
+            <div class="modal fade" id="pricefilterModal" tabindex="-1" aria-labelledby="pricefilterModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm currency_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="currency_select_mdlbody">
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End price drop down Section  -->
+
+        </header-nav-modal>
+
+
+    </modal-section-tag>
+
+    <!-- ========== End Modal Section ========== -->
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- datepicker -->
+    <script src="../../../assets/js/jquery-ui.js"></script>
+    <script src="../../../assets/js/customjquery.js"></script>
+
+
+
+</body>
+
+</html>

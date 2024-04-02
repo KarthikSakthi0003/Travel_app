@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: monospace;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        overflow: hidden;
+        background-color: #012030;
+        /* width: 425px;
+        height: 608px; */
+      }
+
+      .sentence {
+        color: #DAFDBA;
+        font-size: 3em;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+     
+      }
+
+
+      .sentence::after {
+        content: '';
+        position: absolute;
+        right: -20px;
+        bottom: 6px;
+        width: 14px;
+        height: 2px;
+        background-color: #DAFDBA;
+        animation: blink 0.5s linear infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+    <div class="sentence"></div>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sentences = [
+        'people without love are alone,',
+        'but',
+        'those who love deeply become a part of others.',
+      ];
+
+      let currentIndex = 0;
+      let offset = 0;
+      const sentenceElement = document.querySelector('.sentence');
+      let forwards = true;
+      let skipCount = 0;
+      const skipDelay = 25;
+      const speed = 80;
+
+      const updateSentence = () => {
+        sentenceElement.textContent = sentences[currentIndex].substring(0, offset);
+      };
+
+      const handleAnimation = () => {
+        if (forwards) {
+          if (offset >= sentences[currentIndex].length) {
+            if (++skipCount === skipDelay) {
+              forwards = false;
+              skipCount = 0;
+            }
+          }
+        } else if (offset === 0) {
+          forwards = true;
+          currentIndex = (currentIndex + 1) % sentences.length;
+        }
+
+        if (skipCount === 0) {
+          forwards ? offset++ : offset--;
+        }
+
+        updateSentence();
+      };
+
+      setInterval(handleAnimation, speed);
+    });
+  </script>
+</body>
+
+</html>

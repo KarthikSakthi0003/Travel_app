@@ -1,0 +1,2740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVELEAN</title>
+
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="./assets/css/jquery-ui.css">
+    <!-- slick -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/flightform.css">
+    <link rel="stylesheet" href="./assets/css/hotelinc.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+
+</head>
+
+<body>
+    <!-- ========== Start header Section ========== -->
+    <header class="bg_hdr">
+        <div class="container-md">
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <!-- <img src="./assets/imges/logo/logo.jpeg" alt="TRAVELEAN-logo" class="hdr_logo" /> -->
+                        <span class="text-white"> TRAVELEAN</span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse mt-3 mt-md-0" id="navbarSupportedContent">
+                        <ul
+                            class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-3 flex-row flex-wrap gap-sm-0">
+                            <li class="nav-item hdr_social_link_fx">
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item country_select_filter" type="button" data-bs-toggle="modal"
+                                data-bs-target="#pricefilterModal">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                                AUD
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </li>
+                            <li class="nav-item country_select_filter" type="button" data-bs-toggle="modal"
+                                data-bs-target="#countryfilterModal">
+                                <span class="flag_icon">
+                                    <img src="./assets/images/country/AUS.png" alt="AUS">
+                                </span>
+                                AUS <i class="fa-solid fa-chevron-down"></i>
+                            </li>
+
+                            <li class="nav-item" type="button">
+                                <span class="Login_btn dd_btn" data-bs-toggle="modal"
+                                    data-bs-target="#logindropdownModal">
+                                    Login / Signup <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- ========== End header Section ========== -->
+
+
+    <main>
+        <!-- search form section start -->
+        <section>
+            <div class="container-fluid bg_color2">
+                <div class="container-lg container_width">
+                    <div class="relative">
+                        <nav class="module_btn_main">
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-link active" id="nav-flight-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-flight" type="button" role="tab" aria-controls="nav-flight"
+                                    aria-selected="true"><i class="fa-solid fa-plane"></i><span> Flight</span></a>
+                                <a class="nav-link" id="nav-hotel-tab" data-bs-toggle="tab" data-bs-target="#nav-hotel"
+                                    type="button" role="tab" aria-controls="nav-hotel" aria-selected="false"><i
+                                        class="fa-solid fa-hotel"></i> <span>Hotel</span></a>
+                                <a class="nav-link" id="nav-transfer-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-transfer" type="button" role="tab" aria-controls="nav-holiday"
+                                    aria-selected="false"><i class="fa-solid fa-car main_nav_ic"></i><span>
+                                        Transfer</span></a>
+
+
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <!-- ========== Start flight form Section ========== -->
+
+                            <div class="tab-pane fade show active" id="nav-flight" role="tabpanel"
+                                aria-labelledby="nav-flight-tab">
+                                <div class="card shadow-lg p-3 p-md-4 card_brad search_form_bgclr">
+                                    <nav class="traveller_nav_fx">
+                                        <div class="nav nav-tabs my-2 trip_type" id="nav-tab" role="tablist">
+                                            <button class="nav-link active" id="nav-oneway-tab" data-bs-toggle="tab"
+                                                data-bs-target="#nav-oneway" type="button" role="tab"
+                                                aria-controls="nav-oneway" aria-selected="true">
+                                                Oneway
+                                            </button>
+                                            <button class="nav-link" id="nav-roundtrip-tab" type="button" role="tab">
+                                                Roundtrip
+                                            </button>
+                                            <button class="nav-link" id="nav-multicity-tab" data-bs-toggle="tab"
+                                                data-bs-target="#nav-multicity" type="button" role="tab"
+                                                aria-controls="nav-multicity" aria-selected="false">
+                                                Multicity
+                                            </button>
+                                        </div>
+
+                                        <div class="">
+                                            <div class="sc_form_fx d-flex flex-column" id="travellerdetailsone"
+                                                data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                                aria-expanded="false">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-regular fa-user"></i>
+                                                    <p class="traveller_fx">
+                                                        <span class="traveller_count passenger-count">1</span>
+                                                        <span class="traveller_txt">Traveller</span>,
+                                                        <span class="sc_terminal flight_cls">Economy</span>
+                                                    </p>
+                                                    <i class="fa-solid fa-chevron-down"></i>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown-menu p-3" aria-labelledby="travellerdetailsone">
+                                                <div class="selector-box-flight">
+                                                    <div class="passenger-dropdown" role="menu">
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mb-2">
+                                                            <p class="label_inc">Adults (12+)</p>
+                                                            <div class="increment_input">
+                                                                <div
+                                                                    class="input-group input-group-sm pull-right justify-content-center flex-nowrap">
+                                                                    <span class="input-group-btn">
+                                                                        <button
+                                                                            class="btn btn-default number-spinner-flight shadow-none"
+                                                                            data-field="adult_count" data-type="minus">
+                                                                            <span class="fa fa-minus"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                    <input type="text"
+                                                                        class="spinner-value-flight roomcnt_input"
+                                                                        name="adult_count" value="1" max="9" min="1"
+                                                                        readonly="readonly" />
+                                                                    <span class="input-group-btn">
+                                                                        <button
+                                                                            class="btn btn-default number-spinner-flight shadow-none"
+                                                                            data-field="adult_count" data-type="plus">
+                                                                            <span class="fa fa-plus"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <!--  input-group number-spinner //  -->
+                                                            </div>
+                                                            <!-- col// -->
+                                                        </div>
+                                                        <!-- row// -->
+
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mb-2">
+                                                            <p class="label_inc">Children (2-12)</p>
+                                                            <div class="increment_input">
+                                                                <div
+                                                                    class="input-group input-group-sm pull-right justify-content-center flex-nowrap">
+                                                                    <span class="input-group-btn">
+                                                                        <button
+                                                                            class="btn btn-default number-spinner-flight shadow-none"
+                                                                            data-field="child_count" data-type="minus">
+                                                                            <span class="fa fa-minus"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                    <input type="text"
+                                                                        class="spinner-value-flight roomcnt_input"
+                                                                        name="child_count" value="0" max="8" min="0"
+                                                                        readonly="readonly" />
+                                                                    <span class="input-group-btn">
+                                                                        <button
+                                                                            class="btn btn-default number-spinner-flight shadow-none"
+                                                                            data-field="child_count" data-type="plus">
+                                                                            <span class="fa fa-plus"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <!--  input-group number-spinner //  -->
+                                                            </div>
+                                                            <!-- col// -->
+                                                        </div>
+                                                        <!-- row// -->
+
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <p class="label_inc">Infant (0-2)</p>
+                                                            <div class="increment_input">
+                                                                <div
+                                                                    class="input-group input-group-sm pull-right justify-content-center flex-nowrap">
+                                                                    <span class="input-group-btn">
+                                                                        <button
+                                                                            class="btn btn-default number-spinner-flight shadow-none"
+                                                                            data-field="infant_count" data-type="minus">
+                                                                            <span class="fa fa-minus"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                    <input type="text"
+                                                                        class="spinner-value-flight roomcnt_input"
+                                                                        name="infant_count" value="0" max="4" min="0"
+                                                                        readonly="readonly" />
+                                                                    <span class="input-group-btn">
+                                                                        <button
+                                                                            class="btn btn-default number-spinner-flight shadow-none"
+                                                                            data-field="infant_count" data-type="plus">
+                                                                            <span class="fa fa-plus"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <!--  input-group number-spinner //  -->
+                                                            </div>
+                                                            <!-- col// -->
+                                                        </div>
+                                                        <!-- row// -->
+                                                    </div>
+                                                    <div class="flight-class pt-3">
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input shadow-none radio_animated shadow-none"
+                                                                type="radio" name="flightclass" id="economy01"
+                                                                value="Economy" checked />
+                                                            <label class="form-check-label" for="economy01">
+                                                                Economy
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input shadow-none radio_animated shadow-none"
+                                                                type="radio" name="flightclass" id="premium01"
+                                                                value=" Premium" />
+                                                            <label class="form-check-label" for="premium01">
+                                                                Premium
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input shadow-none radio_animated shadow-none"
+                                                                type="radio" name="flightclass" id="business01"
+                                                                value=" Business" />
+                                                            <label class="form-check-label" for="business01">
+                                                                Business
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="scfrm_hdng">Book International and Domestic Flights</p>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <!-- ========== Start oneway/roundtrip ========== -->
+                                        <div class="tab-pane fade show active" id="nav-oneway" role="tabpanel"
+                                            aria-labelledby="nav-oneway-tab">
+                                            <div class="row form_border relative">
+                                                <div class="col-lg-6">
+                                                    <div class="row p-2 relative">
+                                                        <div class="col-sm-6 ">
+                                                            <div class="sc_form_fx d-flex flex-column">
+                                                                <p class="sc_form_lbl">From</p>
+                                                                <span class="Location_icon_fx">
+                                                                    <input type="text" name="" id=""
+                                                                        placeholder="Sydney" class="sc_form_input" />
+                                                                    <i class="fa-solid fa-location-crosshairs"></i>
+                                                                </span>
+                                                                <p class="sc_terminal">Sydney Kingsford Smith
+                                                                    International Airport</p>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-sm-6 form_inn_borderlt pt-2 pt-md-0  ps-sm-4 br_tp_1">
+                                                            <div class="sc_form_fx d-flex flex-column">
+                                                                <p class="sc_form_lbl">To</p>
+                                                                <span class="Location_icon_fx">
+                                                                    <input type="text" name="" id=""
+                                                                        placeholder="Melbourne" class="sc_form_input" />
+                                                                    <i class="fa-solid fa-location-crosshairs"></i>
+                                                                </span>
+                                                                <p class="sc_terminal">Melbourne International Airport
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="return_icon"><i class="fa-solid fa-right-left"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 br_tp_1">
+                                                    <div class="row p-2">
+                                                        <div class="col-6 col-lg-4 form_inn_borderlt
+                                                         form_inn_borderrt form_inn_borderlt_un brdr_lt_0">
+                                                            <div class="sc_form_fx d-flex flex-column relative">
+                                                                <p class="sc_form_lbl">
+                                                                    <i class="fa-solid fa-calendar-days"></i>
+                                                                    Departure
+                                                                    <i class=" fa-solid fa-chevron-down"></i>
+                                                                </p>
+                                                                <input type="text" class="datepicker" id="">
+                                                                <p class="date_fx datetime"><span
+                                                                        class="dayfn">22</span>
+                                                                    <span class="monfn">Jul</span>' <span
+                                                                        class="yrfn">23</span>
+                                                                </p>
+                                                                <p class="sc_terminal dayname">Saturday</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6 col-lg-4 form_inn_borderrt mbtrbr brdr_rt_0">
+                                                            <div class="sc_form_fx d-flex flex-column relative">
+                                                                <p class="sc_form_lbl">
+                                                                    <i class="fa-solid fa-calendar-days"></i>
+                                                                    Return
+                                                                    <i class="fa-solid fa-chevron-down"></i>
+                                                                </p>
+                                                                <p class="tab_to_return">Tap to add a
+                                                                    return date for bigger
+                                                                    discounts</p>
+                                                                <input type="text" class="returndatepicker d-none"
+                                                                    id="returndate">
+                                                                <p class="date_fx returndate d-none datetime"><span
+                                                                        class="dayfn">22</span>
+                                                                    <span class="monfn">Jul</span>' <span
+                                                                        class="yrfn">23</span>
+                                                                </p>
+                                                                <p class="sc_terminal returnday d-none returndayname">
+                                                                    Saturday</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 srch_btn_fx pt-2 pt-lg-0 br_tp_1">
+                                                            <button class="srch_btn">Search</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- ========== End oneway/roundtrip ========== -->
+
+                                        <!-- ========== Start multicity form section ========== -->
+                                        <div class="tab-pane fade" id="nav-multicity" role="tabpanel"
+                                            aria-labelledby="nav-multicity-tab">
+
+                                            <div class="relative">
+                                                <div class="row form_border">
+                                                    <div class="col-lg-6">
+                                                        <div class="row p-2 relative">
+                                                            <div class="col-md-6 ">
+                                                                <div class="sc_form_fx d-flex flex-column">
+                                                                    <p class="sc_form_lbl">From</p>
+                                                                    <span class="Location_icon_fx">
+                                                                        <input type="text" name="" id=""
+                                                                            placeholder="Sydney"
+                                                                            class="sc_form_input" />
+                                                                        <i class="fa-solid fa-location-crosshairs"></i>
+                                                                    </span>
+                                                                    <p class="sc_terminal">Sydney Kingsford Smith
+                                                                        International Airport</p>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="col-md-6 form_inn_borderlt pt-2 pt-md-0 ps-3 mbtpbr">
+                                                                <div class="sc_form_fx d-flex flex-column">
+                                                                    <p class="sc_form_lbl">To</p>
+                                                                    <input type="text" class="sc_form_input" name=""
+                                                                        id="" placeholder="Melbourne" />
+                                                                    <p class="sc_terminal">Melbourne International
+                                                                        Airport</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="return_icon"><i
+                                                                    class="fa-solid fa-right-left"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 brtp">
+                                                        <div class="row p-2">
+                                                            <div
+                                                                class="col-6 col-md-6 col-lg-4 form_inn_borderlt form_inn_borderrt form_inn_borderlt_un">
+                                                                <div class="sc_form_fx d-flex flex-column">
+                                                                    <p class="sc_form_lbl">
+                                                                        <i class="fa-solid fa-calendar-days"></i>
+                                                                        Departure
+                                                                        <i class=" fa-solid fa-chevron-down"></i>
+                                                                    </p>
+                                                                    <p class="date_fx"><span class="dayfn">22</span>
+                                                                        <span class="monfn">Jul</span>' <span
+                                                                            class="yrfn">23</span>
+                                                                    </p>
+                                                                    <p class="sc_terminal">Saturday</p>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-6 col-md-6 ">
+                                                                <div class="city_btn_fx">
+                                                                    <button class="city_btn" id="add_room">+ Add
+                                                                        City</button>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="row form_border my-2">
+                                                    <div class="col-lg-6">
+                                                        <div class="row p-2 relative">
+                                                            <div class="col-md-6 ">
+                                                                <div class="sc_form_fx d-flex flex-column">
+                                                                    <p class="sc_form_lbl">From</p>
+                                                                    <input type="text" name="" id=""
+                                                                        placeholder="Sydney" class="sc_form_input" />
+                                                                    <p class="sc_terminal">Sydney Kingsford Smith
+                                                                        International Airport</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 form_inn_borderlt ps-3 mbtpbr">
+                                                                <div class="sc_form_fx d-flex flex-column">
+                                                                    <p class="sc_form_lbl">To</p>
+                                                                    <input type="text" name="" id=""
+                                                                        placeholder="Melbourne" class="sc_form_input" />
+                                                                    <p class="sc_terminal">Melbourne International
+                                                                        Airport</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="return_icon"><i
+                                                                    class="fa-solid fa-right-left"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 brtp">
+                                                        <div class="row p-2">
+                                                            <div
+                                                                class="col-6 col-md-6 col-lg-4 form_inn_borderlt form_inn_borderrt form_inn_borderlt_un">
+                                                                <div class="sc_form_fx d-flex flex-column">
+                                                                    <p class="sc_form_lbl">
+                                                                        <i class="fa-solid fa-calendar-days"></i>
+                                                                        Departure
+                                                                        <i class=" fa-solid fa-chevron-down"></i>
+                                                                    </p>
+                                                                    <p class="date_fx"><span class="dayfn">22</span>
+                                                                        <span class="monfn">Jul</span>' <span
+                                                                            class="yrfn">23</span>
+                                                                    </p>
+                                                                    <p class="sc_terminal">Saturday</p>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-6  col-md-6  srch_btn_fx d-none d-lg-flex ">
+                                                                <button class="srch_btn">Search</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="clonehere">
+
+                                                </div>
+                                                <div class="col-12  srch_btn_fx d-block d-lg-none">
+                                                    <button class="srch_btn">Search</button>
+                                                </div>
+                                                <div class="template" style="display: none;">
+                                                    <div class="row form_border my-2 ">
+                                                        <div class="col-lg-6">
+                                                            <div class="row p-2 relative">
+                                                                <div class="col-md-6 ">
+                                                                    <div class="sc_form_fx d-flex flex-column">
+                                                                        <p class="sc_form_lbl">From</p>
+                                                                        <input type="text" name="" id=""
+                                                                            placeholder="Sydney"
+                                                                            class="sc_form_input" />
+                                                                        <p class="sc_terminal">Sydney Kingsford Smith
+                                                                            International Airport</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 form_inn_borderlt ps-3 mbtpbr">
+                                                                    <div class="sc_form_fx d-flex flex-column">
+                                                                        <p class="sc_form_lbl">To</p>
+                                                                        <input type="text" name="" id=""
+                                                                            placeholder="Melbourne"
+                                                                            class="sc_form_input" />
+                                                                        <p class="sc_terminal">Melbourne International
+                                                                            Airport</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="return_icon"><i
+                                                                        class="fa-solid fa-right-left"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 brtp">
+                                                            <div class="row p-2 ">
+                                                                <div
+                                                                    class="col-6 col-md-6 col-lg-4 form_inn_borderlt form_inn_borderrt form_inn_borderlt_un relative">
+                                                                    <div class="sc_form_fx d-flex flex-column">
+                                                                        <p class="sc_form_lbl">
+                                                                            <i class="fa-solid fa-calendar-days"></i>
+                                                                            Departure
+                                                                            <i class=" fa-solid fa-chevron-down"></i>
+                                                                        </p>
+                                                                        <p class="date_fx"><span class="dayfn">22</span>
+                                                                            <span class="monfn">Jul</span>' <span
+                                                                                class="yrfn">23</span>
+                                                                        </p>
+                                                                        <p class="sc_terminal">Saturday</p>
+                                                                    </div>
+
+
+                                                                    <i class="fa-solid fa-circle-xmark  remove_btn"
+                                                                        type="button"></i>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- ========== End multicity form section ========== -->
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ========== End flight form Section ========== -->
+
+                            <!-- ========== Start hotel form Section ========== -->
+                            <div class="tab-pane fade" id="nav-hotel" role="tabpanel" aria-labelledby="nav-hotel-tab">
+                                <div class="card shadow-lg p-3 p-md-4 pt-md-5  card_brad search_form_bgclr">
+                                    <div class="traveller_nav_fx mb-2">
+                                        <p class="h5">Book Domestic and International Hotels</p>
+                                        <div class="">
+                                            <div class="dropdown">
+                                                <div class="input-wrap occupancy-change" id="travellerdetailshotel"
+                                                    data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                                    aria-expanded="false">
+                                                    <p class="input-static">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                            viewBox="0 0 22 22" fill="none">
+                                                            <path
+                                                                d="M18.4444 16.4055C18.0391 15.4455 17.451 14.5735 16.7128 13.8381C15.9768 13.1005 15.1049 12.5125 14.1454 12.1064C14.1368 12.1021 14.1282 12.1 14.1196 12.0957C15.4581 11.1289 16.3282 9.5541 16.3282 7.77734C16.3282 4.83398 13.9434 2.44922 11.0001 2.44922C8.0567 2.44922 5.67193 4.83398 5.67193 7.77734C5.67193 9.5541 6.54205 11.1289 7.88052 12.0979C7.87193 12.1021 7.86334 12.1043 7.85474 12.1086C6.89224 12.5146 6.02857 13.0969 5.28736 13.8402C4.54982 14.5762 3.96178 15.4481 3.55572 16.4076C3.1568 17.347 2.94166 18.3542 2.92193 19.3746C2.92136 19.3975 2.92538 19.4204 2.93376 19.4417C2.94214 19.4631 2.95471 19.4825 2.97072 19.4989C2.98674 19.5153 3.00588 19.5284 3.02702 19.5373C3.04816 19.5462 3.07087 19.5508 3.0938 19.5508H4.38287C4.4774 19.5508 4.55259 19.4756 4.55474 19.3832C4.59771 17.7246 5.26373 16.1713 6.44107 14.9939C7.65923 13.7758 9.27701 13.1055 11.0001 13.1055C12.7231 13.1055 14.3409 13.7758 15.559 14.9939C16.7364 16.1713 17.4024 17.7246 17.4454 19.3832C17.4475 19.4777 17.5227 19.5508 17.6172 19.5508H18.9063C18.9292 19.5508 18.952 19.5462 18.9731 19.5373C18.9942 19.5284 19.0134 19.5153 19.0294 19.4989C19.0454 19.4825 19.058 19.4631 19.0664 19.4417C19.0747 19.4204 19.0788 19.3975 19.0782 19.3746C19.0567 18.3477 18.844 17.3486 18.4444 16.4055ZM11.0001 11.4727C10.0139 11.4727 9.0858 11.0881 8.38755 10.3898C7.68931 9.6916 7.30474 8.76348 7.30474 7.77734C7.30474 6.79121 7.68931 5.86309 8.38755 5.16484C9.0858 4.4666 10.0139 4.08203 11.0001 4.08203C11.9862 4.08203 12.9143 4.4666 13.6126 5.16484C14.3108 5.86309 14.6954 6.79121 14.6954 7.77734C14.6954 8.76348 14.3108 9.6916 13.6126 10.3898C12.9143 11.0881 11.9862 11.4727 11.0001 11.4727Z"
+                                                                fill="#333333" />
+                                                        </svg>&nbsp;&nbsp;<span id="occ-room-count"
+                                                            tabindex="4">1</span>
+                                                        Room,
+                                                        <span id="occ-adult-count">2</span> Adults,
+                                                        <span id="occ-child-count">0</span> Children
+                                                    </p>
+                                                    <i class="fa-solid fa-chevron-down"></i>
+                                                </div>
+                                                <div class="occupancy-dropdown dropdown-menu p-3"
+                                                    aria-labelledby="travellerdetailshotel">
+                                                    <article class="row room-count align-items-center">
+                                                        <label class="col-sm-6 col-xs-6 fsz_14">Rooms</label>
+                                                        <div class="col-sm-6 col-xs-6 p-0">
+                                                            <div class="row input-group pull-right flex-nowrap">
+                                                                <span class="col-4 p-0 input-group-btn"
+                                                                    style="text-align: center;">
+                                                                    <button
+                                                                        class="btn btn-default number-spinner shadow-none"
+                                                                        data-field="room_count" data-type="minus">
+                                                                        <i class="fa fa-minus"></i>
+                                                                    </button>
+                                                                </span>
+                                                                <input type="text" class="col-4 spinner-value"
+                                                                    name="room_count" id="room_count" value="1" max="4"
+                                                                    min="1" readonly="readonly" />
+                                                                <span class="col-4 p-0 input-group-btn"
+                                                                    style="text-align: center;">
+                                                                    <button
+                                                                        class="btn btn-default number-spinner shadow-none"
+                                                                        data-field="room_count" data-type="plus">
+                                                                        <i class="fa fa-plus"></i>
+                                                                    </button>
+                                                                </span>
+                                                            </div>
+                                                            <!--  input-group number-spinner //  -->
+                                                        </div>
+                                                        <!-- col// -->
+                                                    </article>
+                                                    <div id="rooms-repeat-block">
+                                                        <div id="room-1">
+                                                            <h5 class="title">
+                                                                <i class="fa fa-hotel"></i>&nbsp;&nbsp;Room 1
+                                                            </h5>
+                                                            <div class="item-occupancy cfx" id="child-age-block-1">
+                                                                <div class="item-people" style="width: 40%;">
+                                                                    <label>
+                                                                        <i class="fa fa-male"></i>
+                                                                        Adults</label>
+                                                                    <select id="adults-1"
+                                                                        class="form-select shadow-none"
+                                                                        onchange="countOccupancies()" name="adults1">
+                                                                        <option value="1">1</option>
+                                                                        <option selected value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="item-people" style="width: 40%;">
+                                                                    <label><i class="fa fa-child"></i>
+                                                                        Children</label>
+                                                                    <select id="children-1"
+                                                                        class="form-select shadow-none" name="childs1"
+                                                                        onchange="renderAgeDropdown(this, 1)">
+                                                                        <option selected value="0">0</option>
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <!-- children-age-wrap // -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--  occupancy-dropdown end //  -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form_border relative">
+                                        <div class="col-lg-4">
+                                            <div class="row p-2 relative">
+                                                <div class="col-12 ">
+                                                    <div class="sc_form_fx d-flex flex-column">
+                                                        <p class="sc_form_lbl">City, Property Name Or Location</p>
+                                                        <span class="Location_icon_fx">
+                                                            <input type="text" name="" id="" placeholder="Sydney"
+                                                                class="sc_form_input" />
+                                                            <i class="fa-solid fa-location-crosshairs"></i>
+                                                        </span>
+                                                        <p class="sc_terminal">Australia</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 br_tp_1">
+                                            <div class="row p-2">
+                                                <div class="col-6 col-lg-4 form_inn_borderlt
+                                                 form_inn_borderrt form_inn_borderlt_un brdr_lt_0">
+                                                    <div class="sc_form_fx d-flex flex-column relative">
+                                                        <p class="sc_form_lbl">
+                                                            <i class="fa-solid fa-calendar-days"></i>
+                                                            Check-In
+                                                            <i class=" fa-solid fa-chevron-down"></i>
+                                                        </p>
+                                                        <input type="text" class="datepicker" id="">
+                                                        <p class="date_fx datetime"><span class="dayfn">22</span>
+                                                            <span class="monfn">Jul</span>' <span class="yrfn">23</span>
+                                                        </p>
+                                                        <p class="sc_terminal dayname">Saturday</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 form_inn_borderrt mbtrbr brdr_rt_0">
+                                                    <div class="sc_form_fx d-flex flex-column relative">
+                                                        <p class="sc_form_lbl">
+                                                            <i class="fa-solid fa-calendar-days"></i>
+                                                            Check-Out
+                                                            <i class="fa-solid fa-chevron-down"></i>
+                                                        </p>
+
+                                                        <input type="text" class="returndatepicker" id="returndate">
+                                                        <p class="date_fx returndate  datetime"><span
+                                                                class="dayfn">22</span>
+                                                            <span class="monfn">Jul</span>' <span class="yrfn">23</span>
+                                                        </p>
+                                                        <p class="sc_terminal returnday  returndayname">
+                                                            Saturday</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 srch_btn_fx pt-2 pt-lg-0 br_tp_1">
+                                                    <button class="srch_btn">Search</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ========== End hotel form Section ========== -->
+
+                            <!-- ========== Start transfer form Section ========== -->
+                            <div class="tab-pane fade" id="nav-transfer" role="tabpanel"
+                                aria-labelledby="nav-transfer-tab">
+                                <div class="card shadow-lg p-3 p-md-4 pt-md-5  
+                                card_brad search_form_bgclr">
+
+                                    <div class="traveller_nav_fx mb-2">
+                                        <p class="h5">Book hustle free transfer bookings</p>
+                                        <div class="">
+                                            <select class="form-select triptype_transfer shadow-none"
+                                                aria-label="Default select example">
+                                                <option selected disabled="disabled">Pickup Type</option>
+                                                <option value="1">From The Airport</option>
+                                                <option value="2">To The Airport</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form_border relative">
+                                        <div class="col-lg-6">
+                                            <div class="row p-2 relative">
+                                                <div class="col-sm-6 ">
+                                                    <div class="sc_form_fx d-flex flex-column">
+                                                        <p class="sc_form_lbl">From</p>
+                                                        <span class="Location_icon_fx">
+                                                            <input type="text" name="" id="" placeholder="Sydney"
+                                                                class="sc_form_input" />
+                                                            <i class="fa-solid fa-location-crosshairs"></i>
+                                                        </span>
+                                                        <p class="sc_terminal">Sydney Kingsford Smith
+                                                            International Airport</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 form_inn_borderlt pt-2 pt-md-0  ps-sm-4 br_tp_1">
+                                                    <div class="sc_form_fx d-flex flex-column">
+                                                        <p class="sc_form_lbl">To</p>
+                                                        <span class="Location_icon_fx">
+                                                            <input type="text" name="" id="" placeholder="Melbourne"
+                                                                class="sc_form_input" />
+                                                            <i class="fa-solid fa-location-crosshairs"></i>
+                                                        </span>
+                                                        <p class="sc_terminal">Melbourne International Airport
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="return_icon"><i class="fa-solid fa-right-left"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 br_tp_1">
+                                            <div class="row p-2">
+                                                <div class="col-6 col-lg-4 form_inn_borderlt
+                                                 form_inn_borderrt form_inn_borderlt_un brdr_lt_0">
+                                                    <div class="sc_form_fx d-flex flex-column relative">
+                                                        <p class="sc_form_lbl">
+                                                            <i class="fa-solid fa-calendar-days"></i>
+                                                            Departure
+                                                            <i class=" fa-solid fa-chevron-down"></i>
+                                                        </p>
+                                                        <input type="text" class="datepicker" id="">
+                                                        <p class="date_fx datetime"><span class="dayfn">22</span>
+                                                            <span class="monfn">Jul</span>' <span class="yrfn">23</span>
+                                                        </p>
+                                                        <p class="sc_terminal dayname">Saturday</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 form_inn_borderrt mbtrbr brdr_rt_0">
+                                                    <div class="sc_form_fx d-flex flex-column relative">
+                                                        <p class="sc_form_lbl">
+                                                            <i class="fa-solid fa-clock tran_ic"></i>
+                                                            Pickup-Time
+                                                            <i class="fa-solid fa-chevron-down"></i>
+                                                        </p>
+                                                        <div class="form_input">
+
+                                                            <select
+                                                                class="form-select border-0 shadow-none px-0 px-sm-2 pickuptime">
+                                                                <option selected="selected" value=""
+                                                                    style="display: none">
+                                                                    Pickup time
+                                                                </option>
+                                                                <option disabled="disabled" value="">
+                                                                    Pickup time
+                                                                </option>
+                                                                <option value="16:30">4:30 PM</option>
+                                                                <option value="16:45">4:45 PM</option>
+                                                                <option value="17:00">5:00 PM</option>
+                                                                <option value="17:15">5:15 PM</option>
+                                                                <option value="17:30">5:30 PM</option>
+                                                                <option value="17:45">5:45 PM</option>
+                                                                <option value="18:00">6:00 PM</option>
+                                                                <option value="18:15">6:15 PM</option>
+                                                                <option value="18:30">6:30 PM</option>
+                                                                <option value="18:45">6:45 PM</option>
+                                                                <option value="19:00">7:00 PM</option>
+                                                                <option value="19:15">7:15 PM</option>
+                                                                <option value="19:30">7:30 PM</option>
+                                                                <option value="19:45">7:45 PM</option>
+                                                                <option value="20:00">8:00 PM</option>
+                                                                <option value="20:15">8:15 PM</option>
+                                                                <option value="20:30">8:30 PM</option>
+                                                                <option value="20:45">8:45 PM</option>
+                                                                <option value="21:00">9:00 PM</option>
+                                                                <option value="21:15">9:15 PM</option>
+                                                                <option value="21:30">9:30 PM</option>
+                                                                <option value="21:45">9:45 PM</option>
+                                                                <option value="22:00">10:00 PM</option>
+                                                                <option value="22:15">10:15 PM</option>
+                                                                <option value="22:30">10:30 PM</option>
+                                                                <option value="22:45">10:45 PM</option>
+                                                                <option value="23:00">11:00 PM</option>
+                                                                <option value="23:15">11:15 PM</option>
+                                                                <option value="23:30">11:30 PM</option>
+                                                                <option value="23:45">11:45 PM</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 srch_btn_fx pt-2 pt-lg-0 br_tp_1">
+                                                    <button class="srch_btn">Search</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ========== End transfer form Section ========== -->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- search form section end -->
+
+        <!--super offers section start  -->
+        <section class="my-4">
+            <div class="container ">
+                <div class=" py-md-4">
+                    <h3 class="heading">Super Offers</h3>
+                    <nav>
+                        <div class="nav nav-tabs super_offer_tab mb-2 " id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-offer-flight-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-offer-flight" type="button" role="tab"
+                                aria-controls="nav-offer-flight" aria-selected="true">Flight</button>
+                            <button class="nav-link" id="nav-offer-hotel-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-offer-hotel" type="button" role="tab"
+                                aria-controls="nav-offer-hotel" aria-selected="false">Hotel</button>
+                            <button class="nav-link" id="nav-offer-transfer-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-offer-transfer" type="button" role="tab"
+                                aria-controls="nav-offer-transfer" aria-selected="false">Transfer</button>
+                            <!-- <button class="nav-link" id="nav-offer-trains-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-offer-trains" type="button" role="tab"
+                                aria-controls="nav-offer-trains" aria-selected="false">Train</button>
+                            <button class="nav-link" id="nav-offer-bus-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-offer-bus" type="button" role="tab" aria-controls="nav-offer-bus"
+                                aria-selected="false">Bus</button> -->
+                        </div>
+                    </nav>
+
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active relative" id="nav-offer-flight" role="tabpanel"
+                            aria-labelledby="nav-offer-flight-tab">
+                            <div id="flightslide" class="carousel slide" data-bs-ride="carousel"
+                                data-bs-interval="100000">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Europe.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">FLIGHT</p>
+                                                                    <p class="h_5">
+                                                                        Grab this Festive Offer Before Prices Soar:
+                                                                    </p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Up to 20% OFF* (up to AUD 2000) on Flights!
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Norway.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0 d-none d-lg-block">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Iceland.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Europe.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Norway.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0 d-none d-lg-block">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Europe.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">FLIGHT</p>
+                                                                    <p class="h_5">
+                                                                        Grab this Festive Offer Before Prices Soar:
+                                                                    </p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Up to 20% OFF* (up to AUD 2000) on Flights!
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="offerslide carousel-control-prev" type="button"
+                                    data-bs-target="#flightslide" data-bs-slide="prev">
+                                    <div class="arrowPrevtesti">
+                                        <span><i class="fa-solid fa-chevron-left offer_arrow "></i></span>
+                                    </div>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="offerslide carousel-control-next" type="button"
+                                    data-bs-target="#flightslide" data-bs-slide="next">
+                                    <div class="arrowNexttesti">
+                                        <span><i class="fa-solid fa-chevron-right offer_arrow"></i></span>
+                                    </div>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade " id="nav-offer-hotel" role="tabpanel"
+                            aria-labelledby="nav-offer-hotel-tab">
+                            <div id="hotelslide" class="carousel slide" data-bs-ride="carousel"
+                                data-bs-interval="100000">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Europe.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">FLIGHT</p>
+                                                                    <p class="h_5">
+                                                                        Grab this Festive Offer Before Prices Soar:
+                                                                    </p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Up to 20% OFF* (up to AUD 2000) on Flights!
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Norway.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0 d-none d-lg-block">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Iceland.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Europe.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Norway.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0 d-none d-lg-block">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Europe.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">FLIGHT</p>
+                                                                    <p class="h_5">
+                                                                        Grab this Festive Offer Before Prices Soar:
+                                                                    </p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Up to 20% OFF* (up to AUD 2000) on Flights!
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="offerslide carousel-control-prev" type="button"
+                                    data-bs-target="#hotelslide" data-bs-slide="prev">
+                                    <div class="arrowPrevtesti">
+                                        <span><i class="fa-solid fa-chevron-left offer_arrow "></i></span>
+                                    </div>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="offerslide carousel-control-next" type="button"
+                                    data-bs-target="#hotelslide" data-bs-slide="next">
+                                    <div class="arrowNexttesti">
+                                        <span><i class="fa-solid fa-chevron-right offer_arrow"></i></span>
+                                    </div>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade relative" id="nav-offer-holiday" role="tabpanel"
+                            aria-labelledby="nav-offer-holiday-tab">
+                            <div id="holidayslide" class="carousel slide" data-bs-ride="carousel"
+                                data-bs-interval="100000">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Europe.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">FLIGHT</p>
+                                                                    <p class="h_5">
+                                                                        Grab this Festive Offer Before Prices Soar:
+                                                                    </p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Up to 20% OFF* (up to AUD 2000) on Flights!
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Norway.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0 d-none d-lg-block">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Iceland.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Europe.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Norway.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 my-3 my-md-0 d-none d-lg-block">
+                                                <div class="w_95">
+                                                    <div class="card p-3">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <img src="./assets/images/europe/Iceland.jpg" alt=""
+                                                                    class="offerCard_img" />
+                                                            </div>
+                                                            <div class="col-8 px-1">
+                                                                <div class="text-right">
+                                                                    <p class="text-muted badge_text mb-1">Flight</p>
+                                                                    <p class="h_5">NEW: FLAT 40% OFF* on Hotels!</p>
+                                                                    <div class="redBdr"></div>
+                                                                    <p class="text-muted offer_txt mt-2">
+                                                                        Valid on bookings made using FAB Credit Card.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-between mt-2 w-100">
+                                                            <p class="accommodation_txt text-center ">T&C's Apply</p>
+                                                            <p class="couponcode">Code: EARLYBIRD</p>
+                                                            <button class="offer_bookbtn" data-bs-toggle="modal"
+                                                                data-bs-target="#holidayhomepagepackage">Book
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="offerslide carousel-control-prev" type="button"
+                                    data-bs-target="#holidayslide" data-bs-slide="prev">
+                                    <div class="arrowPrevtesti">
+                                        <span><i class="fa-solid fa-chevron-left offer_arrow "></i></span>
+                                    </div>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="offerslide carousel-control-next" type="button"
+                                    data-bs-target="#holidayslide" data-bs-slide="next">
+                                    <div class="arrowNexttesti">
+                                        <span><i class="fa-solid fa-chevron-right offer_arrow"></i></span>
+                                    </div>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+        </section>
+        <!--super offers section end  -->
+
+        <!-- slider section start -->
+        <section class="my-4  grey_bg">
+            <!-- Popular tours  -->
+            <div class="container my-2 searchform_width">
+                <div class=" px-3 py-3 py-md-4 relative">
+                    <h3 class="heading mb-4">Popular Tours</h3>
+                    <div class="WondersSlider">
+                        <a href="#">
+
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Europe.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Iceland.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Turkey.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Switzerland.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Paris.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Norway.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Europe.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Paris.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="slider_arrow">
+                        <div class="arrowPrevtesti2">
+                            <span><i class="fa-solid fa-chevron-left offer_arrow"></i></span>
+                        </div>
+                        <div class="arrowNexttesti2">
+                            <span><i class="fa-solid fa-chevron-right offer_arrow"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Popular tours -->
+
+            <!-- popular packages -->
+            <div class="container my-2 searchform_width">
+                <div class=" px-3 py-3 py-md-4 relative">
+                    <h3 class="heading mb-4">Handpicked Packages</h3>
+                    <div class="HandpickSlider">
+
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Paris.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+                                    <h5 class="card-title badge badge_fsz">Top 8</h5>
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/5.jpg" class="card-img Handpickedcard_img" alt="...">
+                                <div class="card-img-overlay topunset">
+                                    <h5 class="card-title badge badge_fsz">Top 8</h5>
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/1.jpg" class="card-img Handpickedcard_img" alt="...">
+                                <div class="card-img-overlay topunset">
+                                    <h5 class="card-title badge badge_fsz">Top 8</h5>
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/8.jpg" class="card-img Handpickedcard_img" alt="...">
+                                <div class="card-img-overlay topunset">
+                                    <h5 class="card-title badge badge_fsz">Top 8</h5>
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Europe.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+                                    <h5 class="card-title badge badge_fsz">Top 8</h5>
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Iceland.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+                                    <h5 class="card-title badge badge_fsz">Top 8</h5>
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Turkey.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+                                    <h5 class="card-title badge badge_fsz">Top 8</h5>
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card  text-white Handpickedcard_img">
+                                <img src="./assets//images/europe/Switzerland.jpg" class="card-img Handpickedcard_img"
+                                    alt="...">
+                                <div class="card-img-overlay topunset">
+                                    <h5 class="card-title badge badge_fsz">Top 8</h5>
+                                    <p class="card-text">Stays in & Around Melbourne for Weekend Getaway</p>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="slider_arrow">
+                        <div class="arrowPrevtesti">
+                            <span><i class="fa-solid fa-chevron-left offer_arrow"></i></span>
+                        </div>
+                        <div class="arrowNexttesti">
+                            <span><i class="fa-solid fa-chevron-right offer_arrow"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- popular packages -->
+        </section>
+        <!--  slide section end -->
+
+        <!-- testimonial section start -->
+        <section class="my-4">
+            <div class="container">
+                <h3 class="heading mb-4">Testimonials</h3>
+                <div class="position mt-5">
+                    <div class="slider">
+
+                        <div class="testimonial-slide-2 w-slide sl_top">
+                            <div class="testimonial-content ">
+                                <span> <i class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>
+                                </span>
+                                <p class="testimonial-text-2 ">Joe is a great agent. He answered all my requests and
+                                    never
+                                    kept me
+                                    hanging.
+                                    He got me into a great apartment and love it. Would defiantly recommend TRAVELEAN
+                                    travells to
+                                    anyone who
+                                    wants the same great experience.<br></p>
+                                <div class="testimonial-name">ELi anderson</div>
+                                <div class="testimonial-box"></div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide-2 w-slide">
+                            <div class="testimonial-content2">
+                                <span> <i class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>
+                                </span>
+                                <p class="testimonial-text-2 color2">Joe is a great agent. He answered all my requests
+                                    and
+                                    never kept me
+                                    hanging.
+                                    He got me into a great apartment and love it. Would defiantly recommend TRAVELEAN
+                                    travells to
+                                    anyone who
+                                    wants the same great experience.<br></p>
+                                <div class="testimonial-name color2">ELi anderson</div>
+                                <div class="testimonial-box"></div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide-2 w-slide sl_top2">
+                            <div class="testimonial-content ">
+                                <span> <i class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i>
+                                </span>
+                                <p class="testimonial-text-2">Joe is a great agent. He answered all my requests and
+                                    never
+                                    kept me
+                                    hanging.
+                                    He got me into a great apartment and love it. Would defiantly recommend TRAVELEAN
+                                    travells to
+                                    anyone who
+                                    wants the same great experience.<br></p>
+                                <div class="testimonial-name">ELi anderson</div>
+                                <div class="testimonial-box"></div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide-2 w-slide sl_top">
+                            <div class="testimonial-content2">
+                                <span> <i class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>
+                                </span>
+                                <p class="testimonial-text-2 color2">Joe is a great agent. He answered all my requests
+                                    and
+                                    never kept me
+                                    hanging.
+                                    He got me into a great apartment and love it. Would defiantly recommend TRAVELEAN
+                                    travells to
+                                    anyone who
+                                    wants the same great experience.<br></p>
+                                <div class="testimonial-name color2">ELi anderson</div>
+                                <div class="testimonial-box"></div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide-2 w-slide">
+                            <div class="testimonial-content">
+                                <span> <i class="fa-sharp fa-solid fa-star"></i>
+                                </span>
+                                <p class="testimonial-text-2">Joe is a great agent. He answered all my requests and
+                                    never
+                                    kept me
+                                    hanging.
+                                    He got me into a great apartment and love it. Would defiantly recommend TRAVELEAN
+                                    travells to
+                                    anyone who
+                                    wants the same great experience.<br></p>
+                                <div class="testimonial-name">ELi anderson</div>
+                                <div class="testimonial-box"></div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide-2 w-slide sl_top">
+                            <div class="testimonial-content2 ">
+                                <span> <i class="fa-sharp fa-solid fa-star"></i><i
+                                        class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>
+                                </span>
+                                <p class="testimonial-text-2 color2">Joe is a great agent. He answered all my requests
+                                    and
+                                    never kept me
+                                    hanging.
+                                    He got me into a great apartment and love it. Would defiantly recommend TRAVELEAN
+                                    travells to
+                                    anyone who
+                                    wants the same great experience.<br></p>
+                                <div class="testimonial-name color2">ELi anderson</div>
+                                <div class="testimonial-box"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="arrowPrevtesti_t">
+                        <span><i class="fa-solid fa-chevron-left"></i></span>
+                    </div>
+                    <div class="arrowNexttesti_t">
+                        <span><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- testimonial section start -->
+
+        <!-- newsletter section start -->
+        <form class="newsletter_form shadow-sm my-4">
+            <div class="">
+                <div class="newsletter_icon"><i class="fa-solid fa-envelope"></i></div>
+                <h1>SUBSCRIBE</h1>
+                <h5>Subscribe to our newsletter &amp; stay update</h5>
+            </div>
+            <div class="newsletter_form_fx">
+                <input type="text" class="newsletter_form_email" id="newsletter_name" name="newsletter_name"
+                    placeholder="Your Name" required="" autocomplete="off">
+                <input type="mail" class="newsletter_form_email" id="email" name="email" placeholder="Your Email"
+                    required="" autocomplete="off">
+                <button class="newsletter_form_btn" value="Submit">Submit</button>
+            </div>
+        </form>
+        <!-- newsletter end -->
+
+        <!-- why travell-app  start-->
+        <section class="my-4">
+            <div class="container-fluid bg_color">
+                <div class="container">
+                    <ul class="aboutus_ul">
+                        <li class="about_link active" onclick="openAbout(event,'about_info')">Why travell-app travels?
+                            <span class="iconrotate"><i class="fa-solid fa-chevron-down" class="rotateIcon"></i></span>
+                        </li>
+
+                        <li class="about_link" onclick="openAbout(event,'company_info')">Company Information <span
+                                class="iconrotate"><i class="fa-solid fa-chevron-down"
+                                    class="rotateIcon"></i></span></span> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="about_link_content mt-3" id="about_info" style="display: block;">
+                    <div class="about_desc">
+                        <h3>Why travell-app travels ?</h3>
+                        <p class="about_p">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                            praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque vero
+                            quia amet corporis omnis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim
+                            quasi provident praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor
+                            unde neque vero quia amet corporis omnis.
+                        </p>
+                        <p class="about_p">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                            praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque vero
+                            quia amet corporis omnis.
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                            praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque vero
+                            quia amet corporis omnis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim
+                            quasi provident praesent
+                        </p>
+                        <p class="about_p">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                            praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque vero
+                            quia amet corporis omnis.
+                        </p>
+                    </div>
+                </div>
+                <div class="about_link_content mt-3" id="company_info">
+                    <div class="about_desc">
+                        <h3>Company Information</h3>
+                        <p class="about_p">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                            praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque vero
+                            quia amet corporis omnis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim
+                            quasi provident praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor
+                            unde neque vero quia amet corporis omnis.
+                        </p>
+                        <p class="about_p">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                            praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque vero
+                            quia amet corporis omnis.
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim quasi provident
+                            praesentium dolorem velit, eaque cum laborum ut maxime itaque minima dolor unde neque vero
+                            quia amet corporis omnis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non enim
+                            quasi provident praesent
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- why travell-app end -->
+
+        <!-- member of section start -->
+        <section class="my-4 shadow-sm accepted_card_bg p-4">
+            <div class="container w-50">
+                <div class="accepted_card_fx">
+                    <p class="accepted_card_hdng">We Accept :</p>
+                    <ul class="accepted_card_ul">
+                        <li>
+                            <img src="./assets/images/footer/visa.jpg" alt="Visa-card">
+                        </li>
+                        <li>
+                            <img src="./assets/images/footer/Mastercard.png" alt="Mastercard">
+                        </li>
+                        <li>
+                            <img src="./assets/images/footer/americanexpress.png" alt="americanexpress">
+                        </li>
+                    </ul>
+                </div>
+                <div class="accepted_card_fx justify-content-center mt-3">
+                    <p class="accepted_card_hdng">Member of :</p>
+                    <ul class="accepted_card_ul">
+                        <li>
+                            <img src="./assets/images/footer/iata.png" alt="iata-card">
+                        </li>
+                        <li>
+                            <img src="./assets/images/footer/tafl.jpeg" alt="tafl">
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- member of section end -->
+
+
+    </main>
+    <footer>
+        <!--nav link start  -->
+        <section>
+            <div class="container searchform_width">
+                <div class="my-3">
+                    <p class="ftr_hd">PRODUCT OFFERING</p>
+                    <ul class="ftr_nav">
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="my-3">
+                    <p class="ftr_hd">TRAVELEAN</p>
+                    <ul class="ftr_nav">
+                        <li><a href="#">
+                                About us,
+                            </a></li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="my-3">
+                    <p class="ftr_hd">ABOUT THE SITE</p>
+                    <ul class="ftr_nav">
+                        <li><a href="#">
+                                Customer Support,
+                            </a></li>
+                        <li>
+                            <a href="#">Privacy Policy, </a>
+                        </li>
+                        <li>
+                            <a href="#">User Agreement,</a>
+                        </li>
+                        <li>
+                            <a href="#"> Terms of Service, </a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                        <li>
+                            <a href="#">Dummy Link,</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--nav link end  -->
+        <hr>
+        <!-- social media link start -->
+        <section>
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center flex-column flex-sm-row gap-2">
+                    <div class="ftr_social_fx">
+                        <p>Follow us</p>
+                        <div class="hdr_social_link_fx footer_social">
+                            <a href="#" target="_blank" class="hdr_social_link">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" target="_blank" class="hdr_social_link">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="#" target="_blank" class="hdr_social_link">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="copy-right">
+                        <p>copyright © 2024 TRAVELEAN
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- social media link end -->
+    </footer>
+
+    <!-- ========== Start Modal animation Section ========== -->
+    <modal-section-tag>
+
+        <header-nav-modal>
+
+            <!-- Start login drop down Section  -->
+            <div class="modal fade" id="logindropdownModal" tabindex="-1" aria-labelledby="logindropdownModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm login_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <ul class="login-menu ">
+                                <li>
+                                    <a class="login-item" href="javascript:void(0)" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal"><i class="fa-solid fa-key"></i><span>
+                                            Customer Login
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="login-item" href="javascript:void(0)" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal"><i class="fa-solid fa-key"></i><span>
+                                            Agent Login</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="login-item" href="#"><i class="fa-solid fa-note-sticky"></i>
+                                        <span>My bookings</span></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End login drop down Section  -->
+
+            <!-- Start Country drop down Section  -->
+            <div class="modal fade" id="countryfilterModal" tabindex="-1" aria-labelledby="countryfilterModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm country_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="contry_select_mdlbody">
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="./assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="./assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="./assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="./assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="./assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="./assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Country drop down Section  -->
+
+            <!-- Start price drop down Section  -->
+            <div class="modal fade" id="pricefilterModal" tabindex="-1" aria-labelledby="pricefilterModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm currency_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="currency_select_mdlbody">
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End price drop down Section  -->
+
+        </header-nav-modal>
+
+    </modal-section-tag>
+    <!-- ========== End Modal Section ========== -->
+
+    <!-- ========== Start feed back offcanvas Section ========== -->
+    <feed-back>
+        <!-- feedback form section start -->
+        <section>
+            <button class="feedback_btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#FeedbackOffcanvas"
+                aria-controls="FeedbackOffcanvas">
+                Feedback & Support
+            </button>
+
+            <div class="offcanvas offcanvas-end feedback_canvas_wd" tabindex="-1" id="FeedbackOffcanvas"
+                aria-labelledby="FeedbackOffcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="FeedbackOffcanvasLabel">Feedback</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="offcanvas-body">
+                        <div>
+                            <div class="row">
+                                <div class="fback_tnq"><span class="fback_lg_txt">We thank you for booking with
+                                        TRAVELEAN</span><span class="fback_sml_txt">and for giving the feedback of your
+                                        experience with us.
+                                    </span></div>
+                            </div>
+                            <div class="row res_feedback_in_fx">
+                                <div class="col-sm-12 col-lg-6">
+                                    <div class="mt-4 mb-3">
+                                        <input type="email" class="form-control" placeholder="Email Id">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <div class="mt-4 mb-3">
+                                        <input type="number" class="form-control" placeholder="Mobile number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row res_feedback_in_fx">
+                                <div class="col-sm-12 col-lg-6">
+                                    <div class="website_exp_main">
+                                        <p>Website Experience</p>
+                                        <div class="website_exp">
+                                            <label for="">User friendliness</label>
+                                            <span class="website_exp_radio1">
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="usf1"
+                                                        name="feedback-userFriendliness" checked
+                                                        aria-label="Radio button for following text input">
+                                                    <label for="usf1">
+                                                        Excellent
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="usf2"
+                                                        name="feedback-userFriendliness"
+                                                        aria-label="Radio button for following text input">
+                                                    <label for="usf2">Good</label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="usf3"
+                                                        name="feedback-userFriendliness"
+                                                        aria-label="Radio button for following text input">
+                                                    <label for="usf3">Satisfactory</label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="usf4"
+                                                        name="feedback-userFriendliness"
+                                                        aria-label="Radio button for following text input">
+                                                    <label for="usf4">Poor</label>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        <div class="website_exp">
+                                            <label for="">Fare Competitiveness</label>
+                                            <span class="website_exp_radio1">
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="fac1"
+                                                        name="feedback-fareCompetiveness" checked
+                                                        aria-label="Radio button for following text input"> <label
+                                                        for="fac1">
+                                                        Excellent
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="fac2"
+                                                        name="feedback-fareCompetiveness"
+                                                        aria-label="Radio button for following text input"> <label
+                                                        for="fac2">Good</label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="fac3"
+                                                        name="feedback-fareCompetiveness"
+                                                        aria-label="Radio button for following text input"><label
+                                                        for="fac3">Satisfactory</label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="fac4"
+                                                        name="feedback-fareCompetiveness"
+                                                        aria-label="Radio button for following text input"><label
+                                                        for="fac4">Poor</label>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <div class="website_exp_main">
+                                        <p>Customer Support Experience</p>
+                                        <div class="website_exp">
+                                            <label for="">Communication Skills</label>
+                                            <span class="website_exp_radio1">
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="csk1"
+                                                        name="feedback-communicationSkills" checked
+                                                        aria-label="Radio button for following text input"> <label
+                                                        for="csk1">
+                                                        Excellent
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="csk2"
+                                                        name="feedback-communicationSkills"
+                                                        aria-label="Radio button for following text input"> <label
+                                                        for="csk2">Good</label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="csk3"
+                                                        name="feedback-communicationSkills"
+                                                        aria-label="Radio button for following text input"><label
+                                                        for="csk3">Satisfactory</label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="csk4"
+                                                        name="feedback-communicationSkills"
+                                                        aria-label="Radio button for following text input"><label
+                                                        for="csk4">Poor</label>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        <div class="website_exp">
+                                            <label for="">Information given Promptly</label>
+                                            <span class="website_exp_radio1">
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="inf1"
+                                                        id="" name="feedback-info_given" checked
+                                                        aria-label="Radio button for following text input"> <label
+                                                        for="inf1">
+                                                        Excellent
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="inf2"
+                                                        name="feedback-info_given"
+                                                        aria-label="Radio button for following text input">
+                                                    <label for="inf2">Good</label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="inf3"
+                                                        name="feedback-info_given"
+                                                        aria-label="Radio button for following text input"><label
+                                                        for="inf3">Satisfactory</label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-check-input mt-0" type="radio" value="" id="inf4"
+                                                        name="feedback-info_given"
+                                                        aria-label="Radio button for following text input"><label
+                                                        for="inf4">Poor</label>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="mb-3">
+                                    <textarea class="form-control" id="" rows="3"
+                                        placeholder="Your Valuable Suggestion for Improvement"></textarea>
+                                </div>
+                            </div>
+                            <input type="submit" class="btn btn-danger mt-4 mb-3 ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- feedback form section end -->
+    </feed-back>
+    <!-- ========== End feed back offcanvas Section ========== -->
+
+
+    <!-- ========== Start room repeat block Section ========== -->
+    <hotel-script-tag>
+        <script id="room-repeat-template" type="text/x-handlebars-template" defer="defer">
+            <div id="room-{{roomNumber}}">
+              <h5 class="title"><i class="fa fa-hotel"></i>&nbsp;&nbsp;Room
+                {{roomNumber}}</h5>
+              <div class="item-occupancy cfx" id="child-age-block-{{roomNumber}}">
+                <div class="item-people"style="width: 40%;">
+                  <label> <i class="fa fa-male"></i> Adults</label>
+                  <select
+                    id="adults-{{roomNumber}}"
+                    class="form-select shadow-none"
+                    onchange="countOccupancies()"
+                    name="adults{{roomNumber}}"
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+                <div class="item-people" style="width: 40%;">
+                  <label><i class="fa fa-child"></i> Children</label>
+                  <select
+                    id="children-{{roomNumber}}"
+                    class="form-select shadow-none"
+                    name="childs{{roomNumber}}"
+                    onchange="renderAgeDropdown(this, {roomNumber})"
+                  >
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+      
+              </div>
+              <!-- children-age-wrap // -->
+            </div>
+          </script>
+
+        <script id="child-age-repeat-template" type="text/x-handlebars-template" defer="defer">
+            <div
+              class="item-people age-child"
+              id="child-{{roomNumber}}-{{childNumber}}"
+            >
+              <label>Age {{childNumber}}</label>
+              <select
+                id="childage-{{roomNumber}}-{{childNumber}}"
+                class="form-select shadow-none"
+                name="child_age{{roomNumber}}_{{childNumber}}"
+              >
+                <option value="0"> 1</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+              </select>
+            </div>
+          </script>
+    </hotel-script-tag>
+    <!-- ========== End room repeat block Section ========== -->
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- datepicker -->
+    <script src="./assets/js/jquery-ui.js"></script>
+    <script src="./assets/js/customjquery.js"></script>
+    <!-- slick -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+    <script src="./assets/js/slick.js"></script>
+
+    <!-- custom js -->
+    <script src="./assets/js/animation.js"></script>
+    <!-- custom js -->
+    <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/multicity.js"></script>
+    <script src="./assets/js/datepicker.js"></script>
+    <script src="./assets/js/handlebars.js"></script>
+    <script src="./assets/js/hotelroom.js"></script>
+
+
+</body>
+
+</html>

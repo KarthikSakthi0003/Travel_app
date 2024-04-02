@@ -1,0 +1,386 @@
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* home page start */
+  .container_width {
+    width: unset;
+    max-width: unset;
+  }
+  /* home page end */
+}
+@media only screen and (min-width: 765px) and (max-width: 990px) {
+  .modify {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .intrnal_hdr {
+    width: 40%;
+  }
+  .airline_ft_name {
+    width: 80px;
+  }
+  .r_fsz13 {
+    font-size: 14px;
+    width: 105px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width: 1125px) {
+  /* home page start */
+  .traveller_nav_fx {
+    gap: 5rem;
+  }
+  /* home page end */
+}
+@media only screen and (max-width: 1280px) {
+  .reviewbooking_canvas_width {
+    width: 65% !important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  /* home page start */
+  .container_width {
+    width: unset;
+  }
+  .offerslide.carousel-control-prev {
+    left: 82% !important;
+  }
+  /* home page end */
+  .intrnal_hdr {
+    width: 32%;
+  }
+
+  .Rfx_wrap {
+    flex-wrap: wrap;
+  }
+  .Rseats_availablity {
+    font-size: 13px;
+    text-align: start;
+  }
+  .r_airlinename {
+    width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  /* home page start */
+  .form_border {
+    height: auto;
+  }
+  /* home page end */
+  .gallery_carousel {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .reviewbooking_canvas_width {
+    width: 80% !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  /* home page start */
+  .traveller_nav_fx {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .form_border {
+    height: auto;
+  }
+  .return_icon {
+    left: 48%;
+  }
+  .brdr_lt_0 {
+    border-left: 0px;
+  }
+  .brdr_rt_0 {
+    border-right: 0px;
+  }
+  .trip_type {
+    width: unset;
+  }
+  .testimonial-content {
+    top: 0;
+  }
+  .offerslide.carousel-control-prev {
+    left: 79% !important;
+  }
+  /* home page end */
+  .Rfx_wrap {
+    justify-content: space-between;
+  }
+  .rslt_border_rt {
+    border-right: 0px solid #dbd5d5;
+    border-bottom: 1px solid #dbd5d5;
+  }
+  .R_card_w {
+    width: 70%;
+  }
+  .br_tp_1 {
+    border-top: 1px solid #ebebeb;
+  }
+  .b_rt_0 {
+    border-right: 0px solid lightgray;
+  }
+  .airport_reslt_name {
+    width: 100%;
+  }
+  .r_fsz13 {
+    width: 100%;
+  }
+
+  .htg_hoteldetails_fx {
+    flex-direction: column;
+  }
+  .res_select_room {
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 1rem;
+  }
+  .reviewbooking_canvas_width {
+    width: 100% !important;
+  }
+  .map_section iframe {
+    width: 100%;
+  }
+  .map_address_fx {
+    text-align: start;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  /* home page start */
+  .traveller_nav_fx {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .scfrm_hdng {
+    display: none;
+  }
+  ul.navbar-nav.ms-auto.mb-2.mb-lg-0.align-items-lg-center.gap-0 {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .website_exp_main {
+    margin-top: 0.8rem;
+  }
+  span.website_exp_radio1 {
+    flex-wrap: wrap;
+  }
+  /* home page end */
+}
+
+@media only screen and (max-width: 767px) {
+  .ticket_price {
+    /* display: flex; */
+    align-items: center;
+    gap: 40px;
+    justify-content: space-between;
+    margin-top: 0.7rem;
+  }
+
+  .iconInr {
+    font-size: 12px;
+    width: 70px;
+  }
+  .airline_name_fx_res {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .ht_border {
+    border-right: 0px solid lightgray;
+    border-bottom: 1px solid lightgray;
+  }
+  .ht_name_fx {
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .modal-dialog.modal-sm.currency_mdl {
+    margin-right: 5rem !important;
+  }
+  .traveller_nav_fx {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem auto;
+  }
+  .return_icon {
+    left: 85%;
+    transform: rotate(90deg);
+  }
+  .return_icon_trans {
+    animation: rotateAnimation 0.5s linear; /* Apply the rotation animation */
+  }
+  @keyframes rotateAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+  .form_inn_borderlt {
+    border-left: 0px solid #ebebeb;
+  }
+
+  .srch_btn {
+    width: 100%;
+    margin-top: 1.25rem;
+  }
+  .trip_type {
+    width: 100%;
+  }
+  .sc_form_input {
+    font-size: 26px;
+  }
+  /* offer slide */
+  .offerslide.carousel-control-next,
+  .offerslide.carousel-control-prev {
+    top: -8% !important;
+    bottom: unset !important;
+  }
+
+  .offerslide.carousel-control-prev {
+    left: 77% !important;
+  }
+  /* offer slide */
+  .Handpickedcard_img {
+    height: 210px;
+    width: 180px;
+  }
+  .feedback_canvas_wd {
+    width: inherit !important;
+  }
+  .container.w-50 {
+    width: inherit !important;
+  }
+  .footer_social .hdr_social_link {
+    color: #888 !important;
+    font-size: 1.5rem;
+  }
+  .ftr_social_fx {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+  }
+  .hdr_social_link_fx.footer_social {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .copy-right {
+    font-size: 12px;
+  }
+  .newsletter_form_fx {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: center;
+    margin: auto;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .aboutus_ul {
+    display: flex;
+    padding: 15px;
+    gap: 20px;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  .intrnal_hdr {
+    width: 50%;
+  }
+
+  .R_card_w {
+    width: 100%;
+  }
+  .airline_name_fx_resR {
+    flex-direction: column;
+    align-items: center;
+  }
+  span.ht_shrt_desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+    width: 220px;
+  }
+  .card-img-overlay.htg_img_overlay {
+    width: 93%;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .Handpickedcard_img {
+    width: 98%;
+    background-color: transparent;
+    border: 0px;
+  }
+  .accepted_card_fx {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .module_btn_main .nav-tabs .nav-link span {
+    font-size: 12px;
+  }
+  .contry_select_mdlbody .login-menu li {
+    width: 100px;
+  }
+  .modify {
+    font-size: 14px;
+  }
+  .ht_rm_type {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* display: inline-block; */
+    vertical-align: middle;
+    width: 150px;
+  }
+  table.table.text-center th,
+  table.table.text-center td {
+    font-size: 14px;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .trip_type {
+    flex-wrap: nowrap;
+  }
+  .tab_to_return {
+    font-size: 11.5px;
+  }
+  .city_btn {
+    padding: 4px 8px;
+  }
+  h3.heading {
+    font-size: 16px;
+  }
+  div#travellerdetailshotel {
+    gap: 0.25rem;
+  }
+  .modal-dialog.modal-sm.country_mdl {
+    margin-right: 5rem !important;
+  }
+  .r_airlinename {
+    width: 90px;
+  }
+  button.viewPrice_btn.htg_roombtn {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}

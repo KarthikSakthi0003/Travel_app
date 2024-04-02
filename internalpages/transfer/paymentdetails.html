@@ -1,0 +1,1945 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVELEAN</title>
+
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="../../assets/css/jquery-ui.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/flightform.css">
+    <link rel="stylesheet" href="../../assets/css/internal.css">
+    <link rel="stylesheet" href="../../assets/css/payment.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+
+<body>
+    <!-- ========== Start header Section ========== -->
+    <header class="bg_hdr">
+        <div class="container-md">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <!-- <img src="../../assets/imges/logo/logo.jpeg" alt="TRAVELEAN-logo" class="hdr_logo" /> -->
+                        <span class="text-white fw-bold"> TRAVELEAN</span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse mt-3 mt-md-0" id="navbarSupportedContent">
+
+                        <div class="intrnal_hdr mb-2 mb-lg-0">
+                            <a class="nav-link " href="#"><i class="fa-solid fa-plane"></i><span>
+                                    Flight</span></a>
+                            <a class="nav-link" href="#"><i class="fa-solid fa-hotel"></i> <span>Hotel</span></a>
+                            <a class="nav-link active" href="#"><i class="fa-solid fa-car main_nav_ic"></i><span>
+                                    Transfer</span></a>
+                        </div>
+
+                        <ul
+                            class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-3 flex-row flex-wrap gap-sm-0">
+                            <li class="nav-item hdr_social_link_fx">
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" target="_blank" class="hdr_social_link">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item country_select_filter" type="button" data-bs-toggle="modal"
+                                data-bs-target="#pricefilterModal">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                                AUD
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </li>
+                            <li class="nav-item country_select_filter" type="button" data-bs-toggle="modal"
+                                data-bs-target="#countryfilterModal">
+                                <span class="flag_icon">
+                                    <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                </span>
+                                AUS <i class="fa-solid fa-chevron-down"></i>
+                            </li>
+
+                            <li class="nav-item" type="button">
+                                <span class="Login_btn dd_btn" data-bs-toggle="modal"
+                                    data-bs-target="#logindropdownModal">
+                                    Login / Signup <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- ========== End header Section ========== -->
+
+
+    <main>
+
+
+        <!-- {/*{/* breadcrumb start */} -->
+        <section class="container-fluid container-xl d-md-none pt-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">Transfer result</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">Booking</a>
+                    </li>
+                </ol>
+            </nav>
+        </section>
+        <!-- {/*{/* breadcrumb  end */} -->
+
+
+        <section>
+            <div>
+                <div class="container-fluid container-xl p-0">
+                    <div class="itinery-section ">
+                        <h4 class="m-0 p-3   itires_fszh4">
+                            Review your booking
+                        </h4>
+
+                        <ul class="smth_scroll">
+                            <li>
+                                <a href="#Summary">Flights Summary</a>
+                            </li>
+
+                            <li>
+                                <a href="#Traveller">Traveller Details</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container-fluid p-0  relative">
+                    <span class="bgGradient"></span>
+                </div>
+                <div class="container-fluid container-xl">
+                    <div class="row ">
+                        <div class="col-lg-9" id="Summary">
+                            <div class="card shadow-lg p-3 ">
+                                <div class="flDetailHdr my-4">
+                                    <div>
+                                        <h6>
+                                            <b>SYDNEY → MELBOURNE</b>
+                                        </h6>
+                                        <p class="d-flex gap-2">
+                                            <span class="scheduleDay">Tuesday, Mar 14</span>
+                                            <!-- <span class="res_stopsch">Non Stop · 2h 10m</span> -->
+                                        </p>
+                                    </div>
+                                 
+                                </div>
+                                <!-- flight details start -->
+                                <div class="">
+                                    <div class="card p-3">
+                                      
+                                        <div class="row">
+                                            <div class="col-md-7">
+                                                <div>
+                                                    <h3 class="ht_name_fx">
+                                                        <span class="ht_name_span">Xylo, Ertiga or similar</span>
+                                                        <p class="freebf "><span class="badge bg-primary fsz_12">3.5</span> <span
+                                                                class="text-primary fsz_12 fw-bold">Good</span> <span
+                                                                class="fsz_12">(1,114 Reviews)</span></p>
+                                                    </h3>
+            
+                                                    <h6 class="ht_name_fx ht_location">
+            
+                                                        <span>
+                                                            SUV
+                                                            -
+                                                            AC
+                                                            -
+                                                            4 Seats
+                                                        </span>
+                                                    </h6>
+                                                  
+            
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+
+                                                        <tbody>
+
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="fs_6 text-muted">
+                                                                       Pickup-Type</p>
+                                                                </td>
+
+                                                                <td>
+                                                                    <p class="fs_6 text-end text-md-start fw-bold">
+                                                                        From The Airport
+                                                                    </p>
+                                                                </td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="fs_6 text-muted ">
+                                                                     Pickup-Time</p>
+                                                                </td>
+
+                                                                <td>
+                                                                    <p class="fs_6 text-end text-md-start fw-bold">
+                                                                        07:40 AM
+                                                                    </p>
+                                                                </td>
+
+                                                            </tr>
+                                                           
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <!-- flight details end -->
+
+
+                           
+                            </div>
+                            <div class="my-3 iti_card_bg  p-3 d-none">
+                                <div class="tripMoneyIconContainer">
+                                    <p>
+                                        <span class="bgProperties tripMoneyIcon">
+                                            TripMoney-Img
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="payltr_card">
+                                            <img src="../../assets/images/icon/pay-later-black.png" alt="" />
+                                            <div class="d-flex flex-column gap-1">
+                                                <p class="fontSize14 fw-bold">Book Now Pay Later</p>
+                                                <p class="fontSize12 ">
+                                                    Book your flight today and pay back later!
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card inner_logincard">
+                                            <p class="fontSize12 text-dark">
+                                                You must log in to your account to use this feature
+                                            </p>
+                                            <button class="continue_btn w-25 ms-auto">Login</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" mb-3 p-3 ">
+                                <h5 class="fw-bold my-1">Important Information</h5>
+                                <p class="travel_guide my-1">
+                                    <img src="../../assets/images/icon/imp-info.png" alt="" />
+                                    Check travel guidelines and baggage information below:
+                                </p>
+                                <ul class="travel_guide_ul">
+                                    <li>
+                                        Wearing masks/face covers is no longer mandatory. However, all
+                                        travellers are advised to wear them, in view of the threat
+                                        posed by COVID-19.
+                                    </li>
+                                    <li>
+                                        For the complete list of travel guidelines issued by Indian
+                                        States and UTs,<a href="#">click here</a>
+                                    </li>
+                                    <li>
+                                        Carry no more than 1 check-in baggage and 1 hand baggage per
+                                        passenger. If violated, airline may levy extra charges Travel
+                                        Insurance
+                                    </li>
+                                </ul>
+                            </div>
+
+
+
+                            <div class="my-1 p-3 card shadow-lg " id="Traveller">
+                                <h5 class="fw-bold my-1">Traveller Details</h5>
+                                <div class="traveler_detls_login">
+                                    <p class="traveler_detls_log_ic fontSize12">
+                                        <img src="../../assets/images/icon/log.png" alt="" />
+                                        <span>
+                                            Log in to view your
+                                            <strong>saved traveller list, unlock amazing deals</strong>&
+                                            much more!
+                                        </span>
+                                    </p>
+                                    <span class="text-uppercase lg_btn" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal" type="button">Login</span>
+                                </div>
+
+                                <div class="fw-bold h6 my-3">
+                                    <AccountCircleTwoToneIcon /> Adult (12Yrs+)
+                                </div>
+                                <p class="fw-bold h6 my-3"> Adult 1</p>
+                                <p class="warning_user">
+                                    Enter name as mentioned on your passport or Government approved
+                                    IDs.
+                                </p>
+                                <div class="row my-3">
+                                    <div class="col-md-4 my-2 my-lg-0">
+                                        <input type="text" placeholder="First Name" class="traveller_input" />
+                                    </div>
+                                    <div class="col-md-4  my-2 my-lg-0">
+                                        <input type="text" placeholder="Last Name" class="traveller_input" />
+                                    </div>
+                                    <div class="col-md-4  my-2 my-lg-0">
+                                        <select name="" id="" class="form-select shadow-none"
+                                            aria-label="Default select example">
+                                            <option value="" class="select_option">Gender</option>
+                                            <option value="" class="select_option">Male</option>
+                                            <option value="" class="select_option">Female</option>
+                                            <option value="" class="select_option">Others</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row my3">
+                                    <p class=" fontSize14 my-3">
+                                        Booking details will be sent to
+                                    </p>
+                                    <div class="col-md-4  my-2 my-lg-0">
+                                        <select name="" id="" class="form-select shadow-none"
+                                            aria-label="Default select example">
+                                            <option value="" class="select_option">India (91)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4  my-2 my-lg-0">
+                                        <input type="text" placeholder="Mobile Number" class="traveller_input" />
+                                    </div>
+                                    <div class="col-md-4  my-2 my-lg-0">
+                                        <input type="email" placeholder="Email" class="traveller_input" />
+                                    </div>
+                                </div>
+                                <div class="my-3">
+                                    <label class="Gst_check_lbl" data-bs-toggle="collapse" href="#Gst_open"
+                                        role="button" aria-expanded="false" aria-controls="Gst_open">
+                                        <input type="checkbox" class="Gst_check_input form-check-input shadow-none" />
+                                        <span class="fontSize14 fw-bold ms-2">
+                                            I have a GST number
+                                            <span class="text-muted"> (Optional)</span>
+                                        </span>
+                                    </label>
+
+                                    <div class="collapse" id="Gst_open">
+                                        <div class="row my-3">
+                                            <div class="col-md-4  my-2 my-lg-0">
+                                                <input type="text" placeholder="Company Name" class="traveller_input" />
+                                            </div>
+                                            <div class="col-md-4  my-2 my-lg-0">
+                                                <input type="text" placeholder="Registration Number"
+                                                    class="traveller_input" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-3 my-3 my-lg-0">
+                            <div class="p-3 card shadow">
+                                <h5 class="fw-bold my-1">Fare Summary</h5>
+                                <div>
+
+                                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                                        <div class="accordion-item border-0 border-bottom pb-2">
+                                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                                <button class="accordion-button collapsed shadow-none fare_summry_btn"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapseOne">
+                                                    <div class="fare_summry_hd">
+                                                        <img src="../../assets/images/icon/minus.png" alt="" />
+                                                        <span class="fontSize14 fw-bold">Base Fare</span>
+
+                                                        <span class="fontSize14 fw-bold">₹ 5,036</span>
+                                                    </div>
+                                                </button>
+
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-headingOne">
+                                                <div class="fare_summary_dtls">
+                                                    <p class="fare_summary_dtls_fx text-muted">
+                                                        <span>Adult(s) (1 X ₹ 5,036)</span> <span>₹ 5,036</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item border-0">
+                                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                                <button class="accordion-button collapsed shadow-none fare_summry_btn"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapseTwo">
+                                                    <div class="fare_summry_hd">
+                                                        <img src="../../assets/images/icon/minus.png" alt="" />
+                                                        <span class="fontSize14 fw-bold r_airlinename">
+                                                            Taxes and Surcharges
+                                                        </span>
+                                                        <span class="fontSize14 fw-bold">
+                                                            ₹ 1,136
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-headingTwo">
+                                                <div class="fare_summary_dtls">
+                                                    <p class="fare_summary_dtls_fx text-muted">
+                                                        <span>Taxes </span>
+                                                        <span>₹ 1,136</span>
+                                                    </p>
+                                                    <p class="fare_summary_dtls_fx text-muted">
+                                                        <span>Surcharges</span>
+                                                        <span>₹ 0</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="TotalFare border-top mt-2 pt-3 ">
+                                        <p class="TotalFare_fx">
+                                            <span>Total Amount</span> <span>₹ 5,862</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- promo code section start -->
+                            <div class="p-3 my-3 card shadow">
+                                <div class="d-flex align-items-center justify-content-between promo_bg_main">
+                                    <p class="promo_bg"><strong> PROMO</strong> CODES</p>
+                                    <img src="../../assets/images/payment/promo-code.png" alt="" class="promo_gif">
+                                </div>
+                                <div>
+                                    <input type="text" name="" id="" class="promo_input"
+                                        placeholder="Enter Promo code here">
+                                    <div class="promoradio">
+
+
+                                        <div class="accordion accordion-flush" id="Promocodeaccordion">
+                                            <div class="accordion-item my-3">
+
+                                                <div class="promo_form_check">
+                                                    <div class="form-check " id="promocheckboxOne">
+                                                        <input
+                                                            class="form-check-input shadow-none  collapsed promocheckbox "
+                                                            type="radio" name="promocoderadio" id="promocoderadio1"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#promo-collapseOne" aria-expanded="false"
+                                                            aria-controls="promo-collapseOne">
+                                                        <label class="form-check-label promocheckbox_label"
+                                                            for="promocoderadio1">
+                                                            <span
+                                                                class="d-flex justify-content-between align-items-center">
+                                                                IHTICICIFEST<i class="fa-solid fa-credit-card"></i>
+                                                            </span>
+                                                            <span class="fsz_12 accordion_check_hide">Get INR 1089
+                                                                instant
+                                                                discount on your ICICI
+                                                                Bank
+                                                                Credit
+                                                                Cards.</span>
+
+                                                            <div id="promo-collapseOne"
+                                                                class="accordion-collapse collapse"
+                                                                aria-labelledby="promocheckboxOne"
+                                                                data-bs-parent="#Promocodeaccordion">
+                                                                <div class="accordion-body p-0">
+                                                                    <span class="promo_gretting">
+                                                                        Congratulations! Promo Discount of Rs.
+                                                                        1089
+                                                                        applied successfully.
+                                                                        Now pay only using your ICICI Bank Credit Card
+                                                                        to
+                                                                        get this
+                                                                        discount.</span>
+                                                                </div>
+                                                            </div>
+                                                            <a href="#" target="_blank" class="text-danger fsz_12">Terms
+                                                                &
+                                                                Conditions</a>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="accordion-item my-3">
+                                                <div class="promo_form_check">
+                                                    <div class="form-check " id="promocheckboxTwo">
+                                                        <input
+                                                            class="form-check-input shadow-none  collapsed promocheckbox "
+                                                            type="radio" name="promocoderadio" id="promocoderadio2"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#promo-collapseTwo" aria-expanded="false"
+                                                            aria-controls="promo-collapseTwo">
+                                                        <label class="form-check-label promocheckbox_label"
+                                                            for="promocoderadio2">
+                                                            <span
+                                                                class="d-flex justify-content-between align-items-center">
+                                                                MMTSURPRISES<i class="fa-solid fa-tag"></i>
+                                                            </span>
+                                                            <span class="fsz_12 accordion_check_hide">Get INR 989
+                                                                instant
+                                                                discount on your ICICI
+                                                                Bank
+                                                                Credit
+                                                                Cards.</span>
+
+                                                            <div id="promo-collapseTwo"
+                                                                class="accordion-collapse collapse"
+                                                                aria-labelledby="promocheckboxTwo"
+                                                                data-bs-parent="#Promocodeaccordion">
+                                                                <div class="accordion-body p-0">
+                                                                    <span class="promo_gretting">
+                                                                        Congratulations! Promo Discount of Rs.
+                                                                        1089
+                                                                        applied successfully.
+                                                                        Now pay only using your ICICI Bank Credit Card
+                                                                        to
+                                                                        get this
+                                                                        discount.</span>
+                                                                </div>
+                                                            </div>
+                                                            <a href="#" target="_blank" class="text-danger fsz_12">Terms
+                                                                &
+                                                                Conditions</a>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="accordion-item my-3">
+                                                <div class="promo_form_check">
+                                                    <div class="form-check " id="promocheckboxThree">
+                                                        <input
+                                                            class="form-check-input shadow-none  collapsed promocheckbox "
+                                                            type="radio" name="promocoderadio" id="promocoderadio3"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#promo-collapseThree" aria-expanded="false"
+                                                            aria-controls="promo-collapseThree">
+                                                        <label class="form-check-label promocheckbox_label"
+                                                            for="promocoderadio3">
+                                                            <span
+                                                                class="d-flex justify-content-between align-items-center">
+                                                                MMTSURPRISES<i class="fa-solid fa-credit-card"></i>
+                                                            </span>
+                                                            <span class="fsz_12 accordion_check_hide">Get INR 989
+                                                                instant
+                                                                discount on your ICICI
+                                                                Bank
+                                                                Credit
+                                                                Cards.</span>
+
+                                                            <div id="promo-collapseThree"
+                                                                class="accordion-collapse collapse"
+                                                                aria-labelledby="promocheckboxThree"
+                                                                data-bs-parent="#Promocodeaccordion">
+                                                                <div class="accordion-body p-0">
+                                                                    <span class="promo_gretting">
+                                                                        Congratulations! Promo Discount of Rs.
+                                                                        1089
+                                                                        applied successfully.
+                                                                        Now pay only using your ICICI Bank Credit Card
+                                                                        to
+                                                                        get this
+                                                                        discount.</span>
+                                                                </div>
+                                                            </div>
+                                                            <a href="#" target="_blank" class="text-danger fsz_12">Terms
+                                                                &
+                                                                Conditions</a>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- promo code section end -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-9">
+                          
+                            <div class="d-flex justify-content-center mt-3">
+                                <input type="submit" value="Continue to payment" class="continue_btn px-5 py-2 h5" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <!-- ========== Start Modal animation Section ========== -->
+    <modal-section-tag>
+
+        <header-nav-modal>
+
+            <!-- Start login drop down Section  -->
+            <div class="modal fade" id="logindropdownModal" tabindex="-1" aria-labelledby="logindropdownModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm login_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <ul class="login-menu ">
+                                <li>
+                                    <a class="login-item" href="javascript:void(0)" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal"><i class="fa-solid fa-key"></i><span>
+                                            Customer Login
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="login-item" href="javascript:void(0)" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal"><i class="fa-solid fa-key"></i><span>
+                                            Agent Login</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="login-item" href="#"><i class="fa-solid fa-note-sticky"></i>
+                                        <span>My bookings</span></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End login drop down Section  -->
+
+            <!-- Start Country drop down Section  -->
+            <div class="modal fade" id="countryfilterModal" tabindex="-1" aria-labelledby="countryfilterModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm country_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="contry_select_mdlbody">
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <span class="flag_icon">
+                                                <img src="../../assets/images/country/AUS.png" alt="AUS">
+                                            </span>
+                                            AUS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Country drop down Section  -->
+
+            <!-- Start price drop down Section  -->
+            <div class="modal fade" id="pricefilterModal" tabindex="-1" aria-labelledby="pricefilterModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm currency_mdl">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="currency_select_mdlbody">
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="login-menu ">
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            AUD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            DH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            BD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            EUR
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="login-item align-items-center" href="javascript:void(0)">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                            GBB
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End price drop down Section  -->
+
+        </header-nav-modal>
+
+
+        <payment-details-modal>
+            <!-- view fare rules modal start  -->
+            <!-- Modal -->
+            <div class="modal fade" id="farerules" tabindex="-1" aria-labelledby="farerulesLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="farerulesLabel">Fare rules</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <nav>
+                                    <div class="nav nav-tabs farerule_modal" id="nav-tab" role="tablist">
+                                        <button class="nav-link active" id="Cancellation-tab" data-bs-toggle="tab"
+                                            data-bs-target="#Cancellation" type="button" role="tab"
+                                            aria-controls="Cancellation" aria-selected="true">Cancellation</button>
+                                        <button class="nav-link" id="DateChange-tab" data-bs-toggle="tab"
+                                            data-bs-target="#DateChange" type="button" role="tab"
+                                            aria-controls="DateChange" aria-selected="false">Date Change</button>
+                                    </div>
+                                </nav>
+                                <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="Cancellation" role="tabpanel"
+                                        aria-labelledby="Cancellation-tab">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div class="airline">
+                                                    <img src="../../assets/images/flight/1.jpg" alt="" />
+                                                    <div>
+                                                        <p class="text-muted ">SYDNEY-MELBOURNE</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <p class="fw-bold">Time frame</p>
+                                                                            <p class="text-muted iconInr">
+                                                                                (From Scheduled flight departure)
+                                                                            </p>
+                                                                        </th>
+                                                                        <th>
+                                                                            <p class="fw-bold">Airline Fee </p>
+                                                                            <p class="text-muted iconInr">
+                                                                                (Per passenger)
+                                                                            </p>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p class="fs_6 ">0 hours to 2 hours*</p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p class="fs_6 ">
+                                                                                ADULT : Non Refundable
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p class="fs_6">2 hours to 3 days*</p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p class="fs_6">
+                                                                                ADULT : ₹ 3,500 + ₹ 300
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p class="fs_6">3 days to 365 days*</p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p class="fs_6">
+                                                                                ADULT : ₹ 3,000 + ₹ 300
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <p class="iconInr">*From the Date of Departure</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="DateChange" role="tabpanel"
+                                        aria-labelledby="DateChange-tab">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div class="airline">
+                                                    <img src="../../assets/images/flight/1.jpg" alt="" />
+                                                    <div>
+                                                        <p class="text-muted ">SYDNEY-MELBOURNE</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <p class="fw-bold">Time frame</p>
+                                                                            <p class="text-muted iconInr">
+                                                                                (From Scheduled flight departure)
+                                                                            </p>
+                                                                        </th>
+                                                                        <th>
+                                                                            <p class="fw-bold">Airline Fee </p>
+                                                                            <p class="text-muted iconInr">
+                                                                                (Per passenger)
+                                                                            </p>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p class="fs_6 ">0 hours to 2 hours*</p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p class="fs_6 ">
+                                                                                ADULT : Non Refundable
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p class="fs_6">2 hours to 3 days*</p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p class="fs_6">
+                                                                                ADULT : ₹ 3,500 + ₹ 300
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p class="fs_6">3 days to 365 days*</p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p class="fs_6">
+                                                                                ADULT : ₹ 3,000 + ₹ 300
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <p class="iconInr">*From the Date of Departure</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- view fare rules modal start  -->
+            <!-- upgrader fare modal start -->
+            <div class="modal fade" id="Upgradefare" tabindex="-1" aria-labelledby="UpgradefareLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="UpgradefareLabel"> You have <strong> more fares</strong> to
+                                select
+                                from</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div>
+                                        <h5>
+                                            <span class="badge bg-secondary rounded-0">DEPART</span>
+                                        </h5>
+                                        <div class="airline">
+                                            <img src="../../assets/images/flight/1.jpg" alt="" />
+                                            <div>
+                                                <p class="text-dark my-2">American Airline</p>
+                                                <p class="fw-bold">SYDNEY to MELBOURNE</p>
+                                                <p class="badge bg-danger  rounded-0 w-100 my-2">
+                                                    Fri, 24 Mar
+                                                </p>
+                                                <p>Non Stop</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <div class="col-lg-6 my-2">
+                                            <div class="upgraderFare_main">
+                                                <label class="d-flex  align-items-baseline gap-2">
+                                                    <input type="radio" name="upgraderFare" class="form-check-input"
+                                                        checked />
+                                                    <p
+                                                        class="d-flex justify-content-between align-items-center fw-bold w-100">
+                                                        <span>Saver</span>
+                                                        <span>₹ 4,694</span>
+                                                    </p>
+                                                </label>
+                                                <p class="my-1 fontSize12">Fare offered by airline.</p>
+
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-suitcase"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Cabin bag <span> 7 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-suitcase-rolling"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Check-in <span> 15 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-rotate-left"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Check-in <span> 15 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <div class="collapse" id="showmore">
+                                                    <div>
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-suitcase"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Cabin bag <span> 7 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-suitcase-rolling"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Check-in <span> 15 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-rotate-left"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Check-in <span> 15 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p data-bs-toggle="collapse" href="#showmore" role="button"
+                                                    aria-expanded="false" aria-controls="showmore">
+                                                    Show More
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 my-2">
+                                            <div class="">
+                                                <label class="d-flex  align-items-baseline gap-2">
+                                                    <input type="radio" name="upgraderFare" class="form-check-input" />
+                                                    <p
+                                                        class="d-flex justify-content-between align-items-center fw-bold w-100">
+                                                        <span>Flexi Plus</span>
+                                                        <span>₹ 5,694</span>
+                                                    </p>
+                                                </label>
+                                                <p class="my-1 fontSize12">Fare offered by airline.</p>
+
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-suitcase"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Cabin bag <span> 7 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-suitcase-rolling"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Check-in <span> 15 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-rotate-left"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Check-in <span> 15 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <div class="collapse" id="showmore">
+                                                    <div id="example-div-text">
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-suitcase"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Cabin bag <span> 7 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-suitcase-rolling"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Check-in <span> 15 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-rotate-left"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Check-in <span> 15 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p data-bs-toggle="collapse" href="#showmore" role="button"
+                                                    aria-expanded="false" aria-controls="showmore">
+                                                    Show More
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 my-2">
+                                            <div class="">
+                                                <label class="d-flex  align-items-baseline gap-2">
+                                                    <input type="radio" name="upgraderFare" class="form-check-input" />
+                                                    <p
+                                                        class="d-flex justify-content-between align-items-center fw-bold w-100">
+                                                        <span>SUPER 6E</span>
+                                                        <span>₹ 9,694</span>
+                                                    </p>
+                                                </label>
+                                                <p class="my-1 fontSize12">Fare offered by airline.</p>
+
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-suitcase"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Cabin bag <span> 7 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-suitcase-rolling"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Check-in <span> 15 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-rotate-left"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Check-in <span> 15 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <div class="collapse" id="showmore">
+                                                    <div id="example-div-text">
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-suitcase"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Cabin bag <span> 7 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-suitcase-rolling"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Check-in <span> 15 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-rotate-left"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Check-in <span> 15 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p data-bs-toggle="collapse" href="#showmore" role="button"
+                                                    aria-expanded="false" aria-controls="showmore">
+                                                    Show More
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 my-2">
+                                            <div class="">
+                                                <label class="d-flex  align-items-baseline gap-2">
+                                                    <input type="radio" name="upgraderFare" class="form-check-input" />
+                                                    <p
+                                                        class="d-flex justify-content-between align-items-center fw-bold w-100">
+                                                        <span>Saver</span>
+                                                        <span>₹ 4,694</span>
+                                                    </p>
+                                                </label>
+                                                <p class="my-1 fontSize12">Fare offered by airline.</p>
+
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-suitcase"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Cabin bag <span> 7 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-suitcase-rolling"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Check-in <span> 15 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <p class="upd_fare_amn_main">
+                                                    <i class="fa-solid fa-rotate-left"></i>
+                                                    <span class="upd_fare_amn">
+                                                        Check-in <span> 15 Kgs</span>
+                                                    </span>
+                                                </p>
+                                                <div class="collapse" id="showmore">
+                                                    <div id="example-div-text">
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-suitcase"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Cabin bag <span> 7 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-suitcase-rolling"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Check-in <span> 15 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                        <p class="upd_fare_amn_main">
+                                                            <i class="fa-solid fa-rotate-left"></i>
+                                                            <span class="upd_fare_amn">
+                                                                Check-in <span> 15 Kgs</span>
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p data-bs-toggle="collapse" href="#showmore" role="button"
+                                                    aria-expanded="false" aria-controls="showmore">
+                                                    Show More
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- upgrader fare modal end -->
+
+            <!-- ========== Start  seat layout Section ========== -->
+        </payment-details-modal>
+    </modal-section-tag>
+
+    <addlist-offcanvas>
+        <div class="offcanvas offcanvas-end reviewbooking_canvas_width" tabindex="-1" id="addlist_offcanvas"
+            aria-labelledby="addlist_offcanvasLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="addlist_offcanvasLabel">Add-ons</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="accordion accordion-flush" id="resultdetailsaccordion">
+                    <div class="my-3 shadow p-3 card">
+                        <h4 class="flight-title-name mb-4">
+                            Passenger Details
+                        </h4>
+                        <!-- passenger one table start -->
+                        <div class="row my-2">
+                            <div class="col-md-6">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr class="bg-secondary text-white">
+                                            <th scope="col">S.no</th>
+                                            <th scope="col">Passenger(s)</th>
+                                            <th scope="col">Check-in baggage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Mark</td>
+                                            <td>15 Kg / adult</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr class="bg-secondary text-white">
+                                            <th scope="col" class="invisible d-md-none">S.no</th>
+                                            <th scope="col"> Additional-Baggage</th>
+                                            <th scope="col"> Meals</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="invisible d-md-none">1</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>
+                                                <a class="add-on-btn" id="resultdetails" data-bs-toggle="collapse"
+                                                    data-bs-target="#resultdetails-collapseOne" aria-expanded="false"
+                                                    aria-controls="resultdetails-collapseOne">
+                                                    More add-ons
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- passenger one table end -->
+
+                        <!-- passenger Two table start -->
+                        <div class="row my-2">
+                            <div class="col-md-6">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr class="bg-secondary text-white">
+                                            <th scope="col">S.no</th>
+                                            <th scope="col">Passenger(s)</th>
+                                            <th scope="col">Check-in baggage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Tobby</td>
+                                            <td>15 Kg / adult</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr class="bg-secondary text-white">
+                                            <th scope="col"> Additional-Baggage</th>
+                                            <th scope="col"> Meals</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>
+                                                <a class="add-on-btn" id="resultdetails2" data-bs-toggle="collapse"
+                                                    data-bs-target="#resultdetails-collapseTwo" aria-expanded="false"
+                                                    aria-controls="resultdetails-collapseTwo">
+                                                    More add-ons
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- passenger Two table end -->
+
+
+
+                    </div>
+
+
+                    <!-- more add-ons collapseOne start  -->
+                    <div class="collapse card shadow my-3  p-3" id="resultdetails-collapseOne"
+                        class="accordion-collapse collapse" aria-labelledby="resultdetailscheckboxOne"
+                        data-bs-parent="#resultdetailsaccordion">
+                        <h5 class="my-3"> <strong>Passenger:</strong> Mark </h5>
+                        <nav>
+                            <div class="nav nav-tabs add_ontabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-baggage-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-baggage" type="button" role="tab" aria-controls="nav-baggage"
+                                    aria-selected="true"><i class="fa-solid fa-suitcase-rolling"></i> <span>
+                                        Add Baggage</span> </button>
+                                <button class="nav-link" id="nav-meals-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-meals" type="button" role="tab" aria-controls="nav-meals"
+                                    aria-selected="false"><i class="fa-solid fa-utensils"></i>
+                                    <span>Add Meals</span></button>
+
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-baggage" role="tabpanel"
+                                aria-labelledby="nav-baggage-tab">
+                                <div>
+                                    <h5 class="fw-bold my-1 ps-0 p-3 mt-2"> <img
+                                            src="../../assets/images/payment/extra-bag.png" alt=""
+                                            class="insuranceshield" />Baggage Details</h5>
+                                    <div
+                                        class="d-flex align-items-center justify-content-between  p-3 flex-wrap flex-lg-nowrap gap-2 gap-lg-0">
+                                        <p class="w-100"><b> Select Baggage type:</b>
+                                            <br>
+                                            <small class="fsz_12 text-muted">(Extra charges will be
+                                                applicable)</small>
+                                        </p>
+                                        <select class="form-select shadow-none" aria-label="Default select example">
+
+                                            <option value="0Direct_NoBaggage" selected>No Excess/Extra Baggage
+                                            </option>
+
+                                            <option value="5Direct_EB05">5-Kg ₹-2250</option>
+
+                                            <option value="8Direct_IB08">8-Kg ₹-800-8 KG INTL Connecting Flights
+                                                Baggage</option>
+
+                                            <option value="10Direct_EB10">10-Kg ₹-4500</option>
+
+                                            <option value="15Direct_IB15">15-Kg ₹-1500-15 KG INTL Connecting
+                                                Flights
+                                                Baggage</option>
+
+                                            <option value="15Direct_EB15">15-Kg ₹-6750</option>
+
+                                            <option value="20Direct_EB20">20-Kg ₹-9000</option>
+
+                                            <option value="30Direct_IB30">30-Kg ₹-3000-30 KG INTL Connecting
+                                                Flights
+                                                Baggage</option>
+
+                                            <option value="30Direct_EB30">30-Kg ₹-13500</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="nav-meals" role="tabpanel" aria-labelledby="nav-meals-tab">
+                                <div>
+                                    <h5 class="fw-bold my-1 ps-0 p-3 mt-2"> <img
+                                            src="../../assets/images/payment/meal.png" alt=""
+                                            class="img-fluid me-2 img-thumbnail" style="width: 40px;" />
+                                        Meal
+                                        Details
+                                    </h5>
+                                    <div
+                                        class="d-flex align-items-center justify-content-between  p-3 flex-wrap flex-lg-nowrap gap-2 gap-lg-0">
+                                        <p class="w-100"><b> Select Meal type:</b>
+                                            <br>
+                                            <small class="fsz_12 text-muted">(Extra charges will be
+                                                applicable)</small>
+                                        </p>
+                                        <select class="form-select shadow-none" aria-label="Default select example">
+
+                                            <option value="NoMeal0" selected>Add No Meal ₹-0</option>
+
+                                            <option value="VGML495">Add Veg Meal ₹-495</option>
+
+                                            <option value="NVML545">Add Non Veg Meal ₹-545</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- more add-ons collapseOne start  -->
+
+                    <!-- more add-ons collapseTwo start  -->
+                    <div class="collapse card shadow my-3  p-3" id="resultdetails-collapseTwo"
+                        class="accordion-collapse collapse" aria-labelledby="resultdetailscheckboxOne"
+                        data-bs-parent="#resultdetailsaccordion">
+                        <h5 class="my-3"> <strong>Passenger:</strong> Tobby </h5>
+                        <nav>
+                            <div class="nav nav-tabs add_ontabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-baggage-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-baggage" type="button" role="tab" aria-controls="nav-baggage"
+                                    aria-selected="true"><i class="fa-solid fa-suitcase-rolling"></i> <span>
+                                        Add Baggage</span> </button>
+                                <button class="nav-link" id="nav-meals-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-meals" type="button" role="tab" aria-controls="nav-meals"
+                                    aria-selected="false"><i class="fa-solid fa-utensils"></i>
+                                    <span>Add Meals</span></button>
+
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-baggage" role="tabpanel"
+                                aria-labelledby="nav-baggage-tab">
+                                <div>
+                                    <h5 class="fw-bold my-1 ps-0 p-3 mt-2"> <img
+                                            src="../../assets/images/payment/extra-bag.png" alt=""
+                                            class="insuranceshield" />Baggage Details</h5>
+                                    <div
+                                        class="d-flex align-items-center justify-content-between  p-3 flex-wrap flex-lg-nowrap gap-2 gap-lg-0">
+                                        <p class="w-100"><b> Select Baggage type:</b>
+                                            <br>
+                                            <small class="fsz_12 text-muted">(Extra charges will be
+                                                applicable)</small>
+                                        </p>
+                                        <select class="form-select shadow-none" aria-label="Default select example">
+
+                                            <option value="0Direct_NoBaggage" selected>No Excess/Extra Baggage
+                                            </option>
+
+                                            <option value="5Direct_EB05">5-Kg ₹-2250</option>
+
+                                            <option value="8Direct_IB08">8-Kg ₹-800-8 KG INTL Connecting Flights
+                                                Baggage</option>
+
+                                            <option value="10Direct_EB10">10-Kg ₹-4500</option>
+
+                                            <option value="15Direct_IB15">15-Kg ₹-1500-15 KG INTL Connecting
+                                                Flights
+                                                Baggage</option>
+
+                                            <option value="15Direct_EB15">15-Kg ₹-6750</option>
+
+                                            <option value="20Direct_EB20">20-Kg ₹-9000</option>
+
+                                            <option value="30Direct_IB30">30-Kg ₹-3000-30 KG INTL Connecting
+                                                Flights
+                                                Baggage</option>
+
+                                            <option value="30Direct_EB30">30-Kg ₹-13500</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="nav-meals" role="tabpanel" aria-labelledby="nav-meals-tab">
+                                <div>
+                                    <h5 class="fw-bold my-1 ps-0 p-3 mt-2"> <img
+                                            src="../../assets/images/payment/meal.png" alt=""
+                                            class="img-fluid me-2 img-thumbnail" style="width: 40px;" />
+                                        Meal
+                                        Details
+                                    </h5>
+                                    <div
+                                        class="d-flex align-items-center justify-content-between  p-3 flex-wrap flex-lg-nowrap gap-2 gap-lg-0">
+                                        <p class="w-100"><b> Select Meal type:</b>
+                                            <br>
+                                            <small class="fsz_12 text-muted">(Extra charges will be
+                                                applicable)</small>
+                                        </p>
+                                        <select class="form-select shadow-none" aria-label="Default select example">
+
+                                            <option value="NoMeal0" selected>Add No Meal ₹-0</option>
+
+                                            <option value="VGML495">Add Veg Meal ₹-495</option>
+
+                                            <option value="NVML545">Add Non Veg Meal ₹-545</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- more add-ons collapseTwo start  -->
+                </div>
+
+            </div>
+
+        </div>
+        <!-- select seat layout start -->
+        <div class="offcanvas offcanvas-end reviewbooking_canvas_width" tabindex="-1" id="addlist_offcanvas"
+            aria-labelledby="addlist_offcanvasLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="addlist_offcanvasLabel">Add-ons</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="accordion accordion-flush" id="resultdetailsaccordion">
+                    <div class="my-3 shadow p-3 card">
+                        <h4 class="flight-title-name mb-4">
+                            Passenger Details
+                        </h4>
+                        <!-- passenger one table start -->
+                        <div class="row my-2">
+                            <div class="col-md-6">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr class="bg-secondary text-white">
+                                            <th scope="col">S.no</th>
+                                            <th scope="col">Passenger(s)</th>
+                                            <th scope="col">Check-in baggage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Mark</td>
+                                            <td>15 Kg / adult</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr class="bg-secondary text-white">
+                                            <th scope="col" class="invisible d-md-none">S.no</th>
+                                            <th scope="col"> Additional-Baggage</th>
+                                            <th scope="col"> Meals</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="invisible d-md-none">1</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>
+                                                <a class="add-on-btn" id="resultdetails" data-bs-toggle="collapse"
+                                                    data-bs-target="#resultdetails-collapseOne" aria-expanded="false"
+                                                    aria-controls="resultdetails-collapseOne">
+                                                    More add-ons
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- passenger one table end -->
+
+                        <!-- passenger Two table start -->
+                        <div class="row my-2">
+                            <div class="col-md-6">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr class="bg-secondary text-white">
+                                            <th scope="col">S.no</th>
+                                            <th scope="col">Passenger(s)</th>
+                                            <th scope="col">Check-in baggage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Tobby</td>
+                                            <td>15 Kg / adult</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr class="bg-secondary text-white">
+                                            <th scope="col"> Additional-Baggage</th>
+                                            <th scope="col"> Meals</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>
+                                                <a class="add-on-btn" id="resultdetails2" data-bs-toggle="collapse"
+                                                    data-bs-target="#resultdetails-collapseTwo" aria-expanded="false"
+                                                    aria-controls="resultdetails-collapseTwo">
+                                                    More add-ons
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- passenger Two table end -->
+
+
+
+                    </div>
+
+
+                    <!-- more add-ons collapseOne start  -->
+                    <div class="collapse card shadow my-3  p-3" id="resultdetails-collapseOne"
+                        class="accordion-collapse collapse" aria-labelledby="resultdetailscheckboxOne"
+                        data-bs-parent="#resultdetailsaccordion">
+                        <h5 class="my-3"> <strong>Passenger:</strong> Mark </h5>
+                        <nav>
+                            <div class="nav nav-tabs add_ontabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-baggage-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-baggage" type="button" role="tab" aria-controls="nav-baggage"
+                                    aria-selected="true"><i class="fa-solid fa-suitcase-rolling"></i> <span>
+                                        Add Baggage</span> </button>
+                                <button class="nav-link" id="nav-meals-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-meals" type="button" role="tab" aria-controls="nav-meals"
+                                    aria-selected="false"><i class="fa-solid fa-utensils"></i>
+                                    <span>Add Meals</span></button>
+
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-baggage" role="tabpanel"
+                                aria-labelledby="nav-baggage-tab">
+                                <div>
+                                    <h5 class="fw-bold my-1 ps-0 p-3 mt-2"> <img
+                                            src="../../assets/images/payment/extra-bag.png" alt=""
+                                            class="insuranceshield" />Baggage Details</h5>
+                                    <div
+                                        class="d-flex align-items-center justify-content-between  p-3 flex-wrap flex-lg-nowrap gap-2 gap-lg-0">
+                                        <p class="w-100"><b> Select Baggage type:</b>
+                                            <br>
+                                            <small class="fsz_12 text-muted">(Extra charges will be
+                                                applicable)</small>
+                                        </p>
+                                        <select class="form-select shadow-none" aria-label="Default select example">
+
+                                            <option value="0Direct_NoBaggage" selected>No Excess/Extra Baggage
+                                            </option>
+
+                                            <option value="5Direct_EB05">5-Kg ₹-2250</option>
+
+                                            <option value="8Direct_IB08">8-Kg ₹-800-8 KG INTL Connecting Flights
+                                                Baggage</option>
+
+                                            <option value="10Direct_EB10">10-Kg ₹-4500</option>
+
+                                            <option value="15Direct_IB15">15-Kg ₹-1500-15 KG INTL Connecting
+                                                Flights
+                                                Baggage</option>
+
+                                            <option value="15Direct_EB15">15-Kg ₹-6750</option>
+
+                                            <option value="20Direct_EB20">20-Kg ₹-9000</option>
+
+                                            <option value="30Direct_IB30">30-Kg ₹-3000-30 KG INTL Connecting
+                                                Flights
+                                                Baggage</option>
+
+                                            <option value="30Direct_EB30">30-Kg ₹-13500</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="nav-meals" role="tabpanel" aria-labelledby="nav-meals-tab">
+                                <div>
+                                    <h5 class="fw-bold my-1 ps-0 p-3 mt-2"> <img
+                                            src="../../assets/images/payment/meal.png" alt=""
+                                            class="img-fluid me-2 img-thumbnail" style="width: 40px;" />
+                                        Meal
+                                        Details
+                                    </h5>
+                                    <div
+                                        class="d-flex align-items-center justify-content-between  p-3 flex-wrap flex-lg-nowrap gap-2 gap-lg-0">
+                                        <p class="w-100"><b> Select Meal type:</b>
+                                            <br>
+                                            <small class="fsz_12 text-muted">(Extra charges will be
+                                                applicable)</small>
+                                        </p>
+                                        <select class="form-select shadow-none" aria-label="Default select example">
+
+                                            <option value="NoMeal0" selected>Add No Meal ₹-0</option>
+
+                                            <option value="VGML495">Add Veg Meal ₹-495</option>
+
+                                            <option value="NVML545">Add Non Veg Meal ₹-545</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- more add-ons collapseOne start  -->
+
+                    <!-- more add-ons collapseTwo start  -->
+                    <div class="collapse card shadow my-3  p-3" id="resultdetails-collapseTwo"
+                        class="accordion-collapse collapse" aria-labelledby="resultdetailscheckboxOne"
+                        data-bs-parent="#resultdetailsaccordion">
+                        <h5 class="my-3"> <strong>Passenger:</strong> Tobby </h5>
+                        <nav>
+                            <div class="nav nav-tabs add_ontabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-baggage-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-baggage" type="button" role="tab" aria-controls="nav-baggage"
+                                    aria-selected="true"><i class="fa-solid fa-suitcase-rolling"></i> <span>
+                                        Add Baggage</span> </button>
+                                <button class="nav-link" id="nav-meals-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-meals" type="button" role="tab" aria-controls="nav-meals"
+                                    aria-selected="false"><i class="fa-solid fa-utensils"></i>
+                                    <span>Add Meals</span></button>
+
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-baggage" role="tabpanel"
+                                aria-labelledby="nav-baggage-tab">
+                                <div>
+                                    <h5 class="fw-bold my-1 ps-0 p-3 mt-2"> <img
+                                            src="../../assets/images/payment/extra-bag.png" alt=""
+                                            class="insuranceshield" />Baggage Details</h5>
+                                    <div
+                                        class="d-flex align-items-center justify-content-between  p-3 flex-wrap flex-lg-nowrap gap-2 gap-lg-0">
+                                        <p class="w-100"><b> Select Baggage type:</b>
+                                            <br>
+                                            <small class="fsz_12 text-muted">(Extra charges will be
+                                                applicable)</small>
+                                        </p>
+                                        <select class="form-select shadow-none" aria-label="Default select example">
+
+                                            <option value="0Direct_NoBaggage" selected>No Excess/Extra Baggage
+                                            </option>
+
+                                            <option value="5Direct_EB05">5-Kg ₹-2250</option>
+
+                                            <option value="8Direct_IB08">8-Kg ₹-800-8 KG INTL Connecting Flights
+                                                Baggage</option>
+
+                                            <option value="10Direct_EB10">10-Kg ₹-4500</option>
+
+                                            <option value="15Direct_IB15">15-Kg ₹-1500-15 KG INTL Connecting
+                                                Flights
+                                                Baggage</option>
+
+                                            <option value="15Direct_EB15">15-Kg ₹-6750</option>
+
+                                            <option value="20Direct_EB20">20-Kg ₹-9000</option>
+
+                                            <option value="30Direct_IB30">30-Kg ₹-3000-30 KG INTL Connecting
+                                                Flights
+                                                Baggage</option>
+
+                                            <option value="30Direct_EB30">30-Kg ₹-13500</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="nav-meals" role="tabpanel" aria-labelledby="nav-meals-tab">
+                                <div>
+                                    <h5 class="fw-bold my-1 ps-0 p-3 mt-2"> <img
+                                            src="../../assets/images/payment/meal.png" alt=""
+                                            class="img-fluid me-2 img-thumbnail" style="width: 40px;" />
+                                        Meal
+                                        Details
+                                    </h5>
+                                    <div
+                                        class="d-flex align-items-center justify-content-between  p-3 flex-wrap flex-lg-nowrap gap-2 gap-lg-0">
+                                        <p class="w-100"><b> Select Meal type:</b>
+                                            <br>
+                                            <small class="fsz_12 text-muted">(Extra charges will be
+                                                applicable)</small>
+                                        </p>
+                                        <select class="form-select shadow-none" aria-label="Default select example">
+
+                                            <option value="NoMeal0" selected>Add No Meal ₹-0</option>
+
+                                            <option value="VGML495">Add Veg Meal ₹-495</option>
+
+                                            <option value="NVML545">Add Non Veg Meal ₹-545</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- more add-ons collapseTwo start  -->
+                </div>
+
+            </div>
+
+        </div>
+        <!-- select seat layout end -->
+
+    </addlist-offcanvas>
+    <!-- ========== End Modal Section ========== -->
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- datepicker -->
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/customjquery.js"></script>
+
+
+
+</body>
+
+</html>
